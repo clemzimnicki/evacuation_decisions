@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Color triplets</title>  <!-- CHANGE THIS (title) -->
+    <script src="jspsych/jspsych.js"></script>
+    <script src="jspsych/plugin-image-button-response.js"></script>
+    <script src="jspsych/plugin-html-keyboard-response.js"></script>
+    <script src="jspsych/plugin-html-button-response.js"></script>
+    <script src="jspsych/plugin-image-keyboard-response.js"></script>
+    <script src="jspsych/plugin-image-text-responseMAS.js"></script>
+    <script src="jspsych/plugin-fullscreen.js"></script>
+    <script src="jspsych/plugin-audio-button-response.js"></script>
+    <script src="jspsych/plugin-image-keyboard-response.js"></script>
+    <script src="jspsych/plugin-survey-multi-select.js"></script>
+    <script src="jspsych/plugin-survey-html-form.js"></script>
+    <script src="jspsych/plugin-survey-text.js"></script>
+    <script src="jspsych/plugin-survey-likert.js"></script>
+    <script src="jspsych/plugin-call-function.js"></script>
+    <script src="jspsych/plugin-preload.js"></script>
+    <script src="jspsych/plugin-image-button-response.js"></script>
+    <script src ="colorNames.json"></script>
+    <script src ="checkTrials.json"></script>
+    <script src ="validationRandom.json"></script>
+    <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe"></script>
+    <link href="jspsych/jspsych.css" rel="stylesheet" type="text/css" />
+    
+    <style>
+        #wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            box-sizing: content-box;  
+            width: 500px;
+            height: 100px;
+            padding: 5px;  
+            border: 2px solid black;
+        }
+
+    </style>
+  </head>
+  <body></body>
+  <script>
+    //<script src="https://unpkg.com/jspsych@8.0.2"><script>
+   // <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe"><script>
+    //<script src="https://unpkg.com/jspsych@7.3.4">
+
+    var jsPsych = initJsPsych({
+        show_progress_bar:false,
+        on_data_update: function(){
+            jsPsych.data.addProperties({worker_id: urlvar.workerId});
+        },
+        on_finish: function(){
+            jsPsych.data.addProperties({worker_id: urlvar.workerId});
+        },
+        max_load_time: 120000
+    });
+
+    //set bg color to medium gray
+    document.body.style.backgroundColor = "rgb(89,89,89)" //(D65 illuminant gray)
+
+    var jsPsych = initJsPsych();
+
+    // capture info from Prolific
+    //var subject_id = jsPsych.data.getURLVariable('PROLIFIC_PID');
+    //var study_id = jsPsych.data.getURLVariable('STUDY_ID');
+    //var session_id = jsPsych.data.getURLVariable('SESSION_ID');
+/*
+    jsPsych.data.addProperties({
+    subject_id: subject_id,
+    study_id: study_id,
+    session_id: session_id
+    });
+   */ 
+    // generating a user id and file name for SONA
+    var secret_code = jsPsych.data.urlVariables().id;
+    var filename = "color_" + secret_code + "_part1.csv"; // CHANGE THIS (file name)
+
+    //const subject_id = jsPsych.randomization.randomID(10);
+    //const filename = `${subject_id}.csv`;
+
+    // this is to save to OSF using DataPipe
+    //if want to save data more often, copy this and change the name, and save halfway through
+      const save_data = { 
+        type: jsPsychPipe,
+        action: "save",
+        experiment_id: "fL1GbwczvGKV", // SONA = "W31dcwJTrTgj", //change this for different experiments in datapipe
+        filename: filename,
+        data_string: ()=>jsPsych.data.get().csv()
+      };
+
+          /* create timeline */
+    var timeline = [];
+      
+    // pulling info re: mechanical turk hit
+    //var urlvar = jsPsych.data.urlVariables();  
+      
+    //console.log(colorNames)
+    //console.log(colorHex)
+
+    // preload stimuli
+    var preload = {
+        type: jsPsychPreload,
+        auto_preload: true,
+        images: colorHex,
+        show_progress_bar: true,
+        message: "Loading experiment files...",
+        error_message: "Oops! There's a problem loading files. Please refresh the page to try again."
+    }  
+    timeline.push(preload);
+
+
+    var stimuli = [];
+
+    //the hex codes of all colors we are using
+    for (i = 0; i < colorHex.length; i++){
+        stimuli.push(
+            {item: colorHex[i]},
+        )
+    }
+
+    var stimuli_arr = colorHex
+      //plan: 
+      //1) make a pool of random triplets
+      //2) sample
+    var validation = [
+      //this is a list of ones you want to keep in
+      // head is the one on top; choice 1 on Left choice 2 on Right
+                    {head: 'img/55824D.png',	choice_1: 'img/96C58C.png',	choice_2: 'img/3B8378.png'},
+                    {head: 'img/55824D.png',	choice_1: 'img/5E78A1.png',	choice_2: 'img/7EC6BA.png'},
+                    {head: 'img/55824D.png',	choice_1: 'img/96C58C.png',	choice_2: 'img/5E78A1.png'},
+                    {head: 'img/96C58C.png',	choice_1: 'img/7EC6BA.png',	choice_2: 'img/55824D.png'},
+                    {head: 'img/96C58C.png',	choice_1: 'img/55824D.png',	choice_2: 'img/A0BAE6.png'},
+                    {head: 'img/96C58C.png',	choice_1: 'img/A0BAE6.png',	choice_2: 'img/3B8378.png'},
+                    {head: 'img/5E78A1.png',	choice_1: 'img/A0BAE6.png',	choice_2: 'img/3B8378.png'},
+                    {head: 'img/5E78A1.png',	choice_1: 'img/55824D.png',	choice_2: 'img/7EC6BA.png'},
+                    {head: 'img/5E78A1.png',	choice_1: 'img/55824D.png',	choice_2: 'img/A0BAE6.png'},
+                    {head: 'img/A0BAE6.png',	choice_1: 'img/7EC6BA.png',	choice_2: 'img/5E78A1.png'},
+                    {head: 'img/A0BAE6.png',	choice_1: 'img/96C58C.png',	choice_2: 'img/3B8378.png'},
+                    {head: 'img/A0BAE6.png',	choice_1: 'img/5E78A1.png',	choice_2: 'img/96C58C.png'},
+                    {head: 'img/3B8378.png',	choice_1: 'img/7EC6BA.png',	choice_2: 'img/5E78A1.png'},
+                    {head: 'img/3B8378.png',	choice_1: 'img/55824D.png',	choice_2: 'img/7EC6BA.png'},
+                    {head: 'img/7EC6BA.png',	choice_1: 'img/A0BAE6.png',	choice_2: 'img/3B8378.png'},
+                    {head: 'img/7EC6BA.png',	choice_1: 'img/3B8378.png',	choice_2: 'img/96C58C.png'},
+                    {head: 'img/A06776.png',	choice_1: 'img/E6A8B7.png',	choice_2: 'img/A8664B.png'},
+                    {head: 'img/A06776.png',	choice_1: 'img/83764C.png',	choice_2: 'img/F1A78A.png'},
+                    {head: 'img/A06776.png',	choice_1: 'img/83764C.png',	choice_2: 'img/E6A8B7.png'},
+                    {head: 'img/E6A8B7.png',	choice_1: 'img/A06776.png',	choice_2: 'img/F1A78A.png'},
+                    {head: 'img/E6A8B7.png',	choice_1: 'img/A06776.png',	choice_2: 'img/C7B88B.png'},
+                    {head: 'img/E6A8B7.png',	choice_1: 'img/C7B88B.png',	choice_2: 'img/A8664B.png'},
+                    {head: 'img/83764C.png',	choice_1: 'img/C7B88B.png',	choice_2: 'img/A8664B.png'},
+                    {head: 'img/83764C.png',	choice_1: 'img/A06776.png',	choice_2: 'img/F1A78A.png'},
+                    {head: 'img/83764C.png',	choice_1: 'img/A06776.png',	choice_2: 'img/C7B88B.png'},
+                    {head: 'img/C7B88B.png',	choice_1: 'img/F1A78A.png',	choice_2: 'img/83764C.png'},
+                    {head: 'img/C7B88B.png',	choice_1: 'img/E6A8B7.png',	choice_2: 'img/A8664B.png'},
+                    {head: 'img/C7B88B.png',	choice_1: 'img/83764C.png',	choice_2: 'img/E6A8B7.png'},
+                    {head: 'img/F1A78A.png',	choice_1: 'img/C7B88B.png',	choice_2: 'img/A8664B.png'},
+                    {head: 'img/F1A78A.png',	choice_1: 'img/E6A8B7.png',	choice_2: 'img/A8664B.png'},
+                    {head: 'img/A8664B.png',	choice_1: 'img/A06776.png',	choice_2: 'img/F1A78A.png'},
+                    {head: 'img/A8664B.png',	choice_1: 'img/F1A78A.png',	choice_2: 'img/83764C.png'},
+                ]
+
+    //concatenate the random (25) validation trials with the chosen (32) validation trials, for a total of 57
+    //the random ones are from validationRandom.json, and the hand picked ones are from validationPicked.json
+    validation_concat = validationTrials.concat(validation);
+
+    //list of 42 check trials that we made separately, in R. check_list is a var in JSON
+    var check_shuffled = jsPsych.randomization.repeat(checkList, 1);
+    //console.log(check_shuffled)
+    
+   //to shuffle the array of button choices at the beginning of the experiment   
+    function shuffle(array) {
+        let currentIndex = array.length,  randomIndex;
+        // While there remain elements to shuffle.
+        while (currentIndex != 0) {
+        // Pick a remaining element.
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+        }
+        return array;
+    }
+        
+    var test_stimuli = [];
+    
+    // to get a random item from the array
+    function getRandomItems(arr) {
+        var temp_array = jsPsych.randomization.sampleWithoutReplacement(arr, 2);
+          arr = arr.filter(e => e !== temp_array[0]);
+          arr = arr.filter(e => e !== temp_array[1]);
+        return temp_array;
+    }
+      
+      
+    //check if mac, and if not, redirect
+        var isMac = navigator.platform.indexOf('Mac') !== -1;
+       
+        // If the user is not on a Mac, we can end the experiment right after the warning
+        if (!isMac) {
+            var endExperiment = {
+                type: jsPsychHtmlKeyboardResponse,
+                stimulus: "Thank you for your time, but unfortunately this experiment is only available on Mac computers. You may now exit this window.",
+                choices: "NO_KEYS"
+            };
+            timeline.push(endExperiment);
+        }
+
+
+    //define welcome message trial 
+    var welcome = {
+      type: jsPsychHtmlKeyboardResponse,
+      stimulus: "Welcome to the experiment. Press any key to begin."
+    };
+    timeline.push(welcome);
+      
+      
+    timeline.push({
+      type: jsPsychFullscreen,
+      fullscreen_mode: true
+    });    
+         
+    /* define consent trail 
+    var consent = {
+        type: jsPsychImageButtonResponse,
+        stimulus: "kc_lab_consent_prolific.png", // CHANGE THIS (to Mturk/Prolific or SONA depending on your sample)
+        choices: ["Consent & Continue"]
+    };
+    timeline.push(consent);*/
+
+    var consent = {
+        type: jsPsychHtmlButtonResponse, // CHANGE THIS (instructions)
+        stimulus: 
+            "<div>" +
+            "<p><font size='5'> <strong>UNIVERSITY OF WISCONSIN-MADISON</strong></font><br>" +
+            "<strong>Research Participant Information and Consent Form</strong></p>" +
+            "<p align='left'><strong>Title of the Study:</strong> Learning meanings of words and objects<br>" +
+            "<strong>Condition:</strong> Single session, any language, class credit compensation<br>" +
+            "<strong>Principal Investigator:</strong> Tim Rogers (phone: (608) 262 - 0808)<br></p>" +
+
+            "<p align='left'><font size='4'><strong>DESCRIPTION OF THE RESEARCH</strong></font></p>" +
+            "<p align='left'>You are invited to participate in a research study about the process by which people learn to recognize and understand the meanings of words and pictures." +
+            "You have been asked to participate because you are between the ages of 18 and 30.  Your participation is voluntary." +
+            "Research will be conducted in an experiment room in the Brogden Psychology building located on the UW-Madison campus at 1202 W. Johnson St." +
+            
+            "<p align='left'><font size='4'><strong>WHAT WILL MY PARTICIPATION INVOLVE?</strong></font></p>" +
+            "<p align='left'>Participants will be asked to complete one session of less than one hour, during which time you will be asked to sit in front of a computer screen." +
+            "You will hear or read individual words or view pictures on the computer screen.  You will be asked either to press keys on the keyboard in response to the words" +
+            "or pictures, or to speak a response aloud.  In some cases your eye movements will be monitored with an eye-tracking machine while you respond.</p>" +
+            
+            "<p align='left'>If you are assigned to an experiment condition in which you speak aloud, we will record your speech.  The audiotapes or digital recordings will be played by" +
+            "researchers for the purpose of data analysis. The recordings will only be used for that purpose.  When the results of the research are published or discussed in conferences," +
+            "no information will be included that would reveal your identity.  The tapes/recordings will be retained for a period of 10 years, after which they will be destroyed.</p>" +
+            
+            "<p align='left'>If you are assigned to an experiment condition in which your eye movements are monitored, you will be asked to wear some light plastic headgear. The equipment will" +
+            "shine a faint red light on your eye, and the computer will use the reflection of this light to determine where in space you are looking while the experiment is running." +
+            "This information will be recorded digitally and will be inspected by researchers solely for data analysis and for no other purpose. When the results of the research are" + 
+            "published or discussed in conferences, no information will be included that would reveal your identity.  The tapes/recordings will be retained for a period of 10 years," +
+            "after which they will be destroyed.</p>" +
+
+            "<p align='left'>During the experiment, you may be asked to complete one or more questionnaires.</p>" +
+
+            "<p align='left'><font size='4'><strong>HOW WILL I BE COMPENSATED FOR PARTICIPATING?</strong></font></p>"+
+            "<p align='left'>You will be compensated with extra credit in your introductory Psychology class at the normal rate of 1 credit for every half hour of participation.</p>" +
+            
+            "<p align='left'><font size='4'><strong>ARE THERE ANY RISKS TO ME?</strong></font></p>" +
+            "<p align='left'>Participants may risk accidental breach of confidentiality. There are no other anticipated risks to subjects participating in this experiment.</p>" +
+
+            "<p align='left'><font size='4'><strong>ARE THERE ANY BENEFITS TO ME?</strong></font></p>" +
+            "<p align='left'>There are no direct benefits to you for participation in this study.</p>" +
+
+            "<p align='left'><font size='4'><strong>HOW WILL MY CONFIDENTIALITY BE PROTECTED?</strong></font></p>" +
+            "<p align='left'>All recordings, digitized files and written surveys will be identified only with a subject number and not with your name.  The files will be kept in a locked cabinet or" +
+            "secure computer with password protection and will be heard/viewed only by the researchers. The only link between your data and your identity will be this consent form," +
+            "which will be kept in a locked cabinet in a locked room accessible only by the researchers." +
+            "While there will probably be publications as a result of this study, your name will not be used. Only group characteristics will be published.</p>" +
+
+            "<p align='left'><font size='4'><strong>WHOM SHOULD I CONTACT IF I HAVE QUESTIONS?</strong></font></p>" +
+            "<p align='left'>You may ask any questions about the research at any time. If you have questions about the research after you leave today you should contact the Principal Investigator Tim Rogers at (608) 262 - 0808." +
+            "If you have any questions about your rights as a research participant or have complaints about the research study or study team, call the confidential research compliance line at 1-833-652-2506." +
+            "Staff will work with you to address concerns about research participation and assist in resolving problems.</p>" +
+
+            "<p align='left'>Your participation is completely voluntary. If you decide not to participate or to withdraw from the study it will have no effect on your grade in this class." +
+            "Your signature indicates that you have read this consent form, had an opportunity to ask any questions about your participation in this research and voluntarily consent to participate." +
+            "You will receive a copy of this form for your records.</p>" +
+            "</div>"
+            ,
+
+        choices: ["Consent and continue"]
+    };
+    timeline.push(consent);  
+      
+    var lasttrialdata_rt = 0;
+
+    var displayAdjust = {
+        type: jsPsychSurveyHtmlForm,
+        preamble:
+            "<p>Before beginning the experiment, please ensure that you are using a computer to complete the experiment, NOT a phone or tablet, <br>" +
+            "and that you are in a dark room. Next, please take a look at the set of five squares below. Some squares are the same color as the background, <br>"+
+            "while others are slightly darker or lighter. The squares that differ from the background will become visible when the screen brightness is at maximum. <br>"+
+            "Please adjust your screen brightness until you can see the squares, and report how many of the five squares differ from the background.<br>" +
+            "Brightness can be adjusted by using the F1 and F2 keys.</p>"+
+            
+                '<div style= "height:100px;width:100px;border:00px solid powderblue;display: inline-block; background:rgb(89,89,89)"></div>'+
+                '<div style= "height:100px;width:100px;border:00px solid powderblue;display: inline-block; background:rgb(90,90,90)"></div>'+
+                '<div style= "height:100px;width:100px;border:00px solid powderblue;display: inline-block; background:rgb(89,89,89)"></div>'+
+                '<div style= "height:100px;width:100px;border:00px solid powderblue;display: inline-block; background:rgb(88,88,88)"></div>'+
+                '<div style= "height:100px;width:100px;border:00px solid powderblue;display: inline-block; background:rgb(90,90,90)"></div>'+
+
+            "<p>Click 'Continue' when you have adjusted your settings.</p>",
+        html: '<p> There are <input name="first" type="text" /> squares.</p>'
+    };
+    timeline.push(displayAdjust)
+
+          
+    /* define testing instructions */
+    var instructions = {
+      type: jsPsychHtmlButtonResponse, // CHANGE THIS (instructions)
+      stimulus: "<p>In each trial of this task, you will see three images: one target item on top, and two choices beneath the target item." +
+        "</p><p>For each trial, <strong>please select the item that is most like the target item.</strong><br>"+
+        "If you think the color on the <strong>left</strong> is most similar to the color on top, please press the left arrow key.<br>" +
+        "If you think the color on the <strong>right</strong> is most similar to the color on top, please press the right arrow key.<br>" +
+        "<p>There may be trials with no obvious answer. In those cases, use your best judgment." +
+        "<p>There will be 3 rounds of this task with 280 trials per round. You will have the opportunity to take breaks between rounds. </p>"+
+          "<p>Click 'Continue' to begin the test.</p>",
+        choices: ["Continue"],
+        post_trial_gap: 2000,
+        on_finish: function(){
+            shuffle(validation_concat);
+
+        }
+    };
+   timeline.push(instructions);  
+      
+      
+      var fixation = {
+          type: jsPsychHtmlKeyboardResponse,
+            stimulus: '+',
+            choices: "NO_KEYS",
+            trial_duration: 500
+        };
+      timeline.push(fixation);
+      
+      var arr_pair = [];
+
+// define the trials!
+/*
+    var trial = {
+        type: jsPsychImageButtonResponse,
+        stimulus: jsPsych.timelineVariable('item'),    // IF YOU CHANGED THE OBJECT NAMES IN YOUR ARRAY ABOVE, CHANGE THEM HERE TO MATCH     
+        choices: function(){
+            shuffle(stimuli_arr);
+            arr_pair = getRandomItems(stimuli_arr);
+            // the following makes sure the choices and stimulus are NOT the same!
+            while(arr_pair[0] == jsPsych.timelineVariable('item') || arr_pair[1] == jsPsych.timelineVariable('item')){
+                arr_pair = getRandomItems(stimuli_arr);
+            }
+            return arr_pair;
+        },
+        button_html: '<button class="jspsych-btn-ckz"><img src= %choice%></button>',
+        on_finish: function(data){
+            
+            shuffle(stimuli_arr); // CHANGE THIS TO MATCH THE REGULAR ARRAY YOU SPECIFIED ABOVE
+            data.choices = arr_pair;
+            n = 1;
+            var data_last1 = jsPsych.data.get().last(n);
+            lasttrialdata_rt = data_last1.select('rt').mean();
+            if (lasttrialdata_rt < 500){
+                    data.speedy = true;
+                } else {
+                    data.speedy = false; 
+            }
+            data.sampleAlg = "random";
+        }
+    };
+*/
+    // define the trials!
+    var trial = {
+        type: jsPsychImageKeyboardResponse,
+        stimulus: jsPsych.timelineVariable('item'),
+        choices: ['ArrowLeft', 'ArrowRight'],
+        on_start: function (trial) {
+            shuffle(stimuli_arr);
+            arr_pair = getRandomItems(stimuli_arr);
+            // the following makes sure the choices and stimulus are NOT the same!
+            while (
+                arr_pair[0] == jsPsych.timelineVariable('item') ||
+                arr_pair[1] == jsPsych.timelineVariable('item')
+            ) {
+                arr_pair = getRandomItems(stimuli_arr);
+            }
+            console.log("Choices:", arr_pair);
+            trial.prompt = `
+        <div style="display: flex; justify-content: space-around; margin-top: 20px;">
+          <img src="${arr_pair[0]}" style="width: 150px; height: 150px; margin-right: 50px;" />
+          <img src="${arr_pair[1]}" style="width: 150px; height: 150px; margin-left: 50px;" />
+        </div>
+      </div>`;
+
+            // Store arr_pair in trial data
+            trial.data = {
+                choices: [arr_pair[0], arr_pair[1]]
+            };
+        },
+        on_finish: function (data) {
+            console.log("Response (key press):", data.response);
+
+            // Retrieve arr_pair from trial data
+            const choices = jsPsych.data.get().last(1).select('choices').values[0];
+            console.log("Retrieved Choices:", choices);
+
+            // // Ensure arr_pair is available
+            // if (typeof arr_pair === 'undefined') {
+            //   console.error("arr_pair is undefined. Data may not be set correctly.");
+            //   return;
+            // }
+            //shuffle(texture_arr);
+            //data.choices = arr_pair;
+            // Determine which image was selected based on key press
+            if (data.response == 'ArrowLeft') {
+                console.log("ArrowLeft selected.");
+                data.selected_image = arr_pair[0];
+                data.selected_index = 0;  // ArrowLeft corresponds to the first choice
+            } else if (data.response == 'ArrowRight') {
+                console.log("ArrowRight selected.");
+                data.selected_image = arr_pair[1];
+                data.selected_index = 1;  // ArrowLeft corresponds to the first choice
+            }
+
+            // Get the previous trial's data and compute the average response time
+            var data_last1 = jsPsych.data.get().last(1);
+            var lasttrialdata_rt = data_last1.select("rt").mean();
+
+            // Check if the response was "speedy"
+            data.speedy = lasttrialdata_rt < 500 ? true : false;
+
+            // Record the sampling algorithm used
+            // Save additional data
+            data.choices = arr_pair;
+            data.sampleAlg = "random";
+        },
+    };
+  
+/*
+    // define the validation trials!
+    var validation_trial = {
+        type: jsPsychImageButtonResponse,
+        stimulus: function(){
+            row = validation_concat.pop();
+            head = row.head;
+            return head;},         
+        choices: function(){
+            arr_pair = [row.choice_1, row.choice_2];
+            return arr_pair;
+        },
+        button_html: '<button class="jspsych-btn-ckz"><img src= %choice%></button>',
+        on_finish: function(data){
+            data.choices = arr_pair;
+            n = 1;
+            var data_last = jsPsych.data.get().last(n);
+            lasttrialdata_rt = data_last.select('rt').mean();
+            if (lasttrialdata_rt < 1000){
+                    data.speedy = true;
+                } else {
+                    data.speedy = false; 
+            }
+            data.sampleAlg = "validation"
+        }
+    };
+*/
+  // define the validation trials!
+  var validation_trial = {
+        type: jsPsychImageKeyboardResponse,
+        stimulus: function () {
+            row = validation_concat.pop();
+            head = row.head;
+            return head;
+        },
+        choices: ['ArrowLeft', 'ArrowRight'],  // Use arrow keys for choices
+
+        on_start: function (trial) {
+            arr_pair = [row.choice_1, row.choice_2];  // Get the two choices
+
+            // Set the prompt to display the two choice images with space between them
+            trial.prompt = `
+      <div style="display: flex; justify-content: space-around; margin-top: 20px;">
+        <img src="${arr_pair[0]}" style="width: 150px; height: 150px; margin-right: 50px;" />
+        <img src="${arr_pair[1]}" style="width: 150px; height: 150px; margin-left: 50px;" />
+      </div>`;
+        },
+
+        on_finish: function (data) {
+            console.log("Response (key press):", data.response);
+
+            // Ensure arr_pair is available
+            if (typeof arr_pair === 'undefined') {
+                console.error("arr_pair is undefined. Data may not be set correctly.");
+                return;
+            }
+            // Determine which image was selected based on the key press
+            if (data.response == 'ArrowLeft') {
+                console.log("ArrowLeft selected.");
+                data.selected_image = arr_pair[0];
+                data.selected_index = 0;  // ArrowLeft corresponds to the first choice
+            } else if (data.response == 'ArrowRight') {
+                console.log("ArrowRight selected.");
+                data.selected_image = arr_pair[1];
+                data.selected_index = 1;  // ArrowLeft corresponds to the first choice
+            }
+
+            // Save the choices to the data
+            //data.choices = arr_pair;
+            //console.log("Choices array:", arr_pair);
+
+            // Record additional information such as response time and whether it was "speedy"
+            var data_last = jsPsych.data.get().last(1);
+            var lasttrialdata_rt = data_last.select("rt").mean();
+
+            data.speedy = lasttrialdata_rt < 500 ? true : false;
+            // Save additional data
+            data.choices = arr_pair;
+            data.sampleAlg = "validation";
+        }
+    };
+
+    // Define the attention checks with keyboard responses
+    var check_trial = {
+        type: jsPsychImageKeyboardResponse,
+        stimulus: jsPsych.timelineVariable('head'),  // Display the head image
+        choices: ['ArrowLeft', 'ArrowRight'],  // Use arrow keys for choices
+
+        on_start: function (trial) {
+            arr_pair = [
+                jsPsych.timelineVariable('choice_1'),
+                jsPsych.timelineVariable('choice_2')
+            ];
+
+            // Set the prompt to display the two choice images with space between them
+            trial.prompt = `
+      <div style="display: flex; justify-content: space-around; margin-top: 20px;">
+        <img src="${arr_pair[0]}" style="width: 150px; height: 150px; margin-right: 50px;" />
+        <img src="${arr_pair[1]}" style="width: 150px; height: 150px; margin-left: 50px;" />
+      </div>`;
+        },
+
+        on_finish: function (data) {
+
+            const response = data.response.toLowerCase();
+            console.log("Response (key press):", data.response);
+            // Save the choices to the data
+            data.choices = arr_pair;
+
+            console.log("Choices array:", arr_pair);
+
+            // Add logging to verify the conditions
+            console.log("Checking if response is arrowleft or arrowright...");
+
+            // Determine which image was selected based on the key press
+            if (response === 'arrowleft') {
+                console.log("ArrowLeft selected.");
+                data.selected_image = arr_pair[0];
+                data.selected_index = 0;  // ArrowLeft corresponds to the first choice
+            } else if (response === 'arrowright') {
+                console.log("ArrowRight selected.");
+                data.selected_image = arr_pair[1];
+                data.selected_index = 1;  // ArrowRight corresponds to the second choice
+            }
+
+            // Log the values for debugging
+            console.log("Selected Index:", data.selected_index);
+            console.log("Correct Choice (from timeline variable):", Number(jsPsych.timelineVariable("correct_choice")));
+
+
+            // Check if the selected image is the correct choice
+            if (data.selected_index == Number(jsPsych.timelineVariable("correct_choice"))) {
+                data.correct = true;
+                console.log("Correct choice made!");
+            } else {
+                data.correct = false;
+                console.log("Incorrect choice.");
+            }
+
+            // Record the sample algorithm type
+            data.sampleAlg = "check";
+        }
+    };
+
+    
+    var if_trial_check = {
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: "<p><strong>Incorrect!</strong></p>That was an attention check. Please pay attention while completing this task.<p>Press 'y' to continue.</p>",
+        choices:["y"]
+    }
+
+    var if_node_check = {
+        timeline: [if_trial_check],
+        conditional_function: function(){
+            // get the data from the previous trial,
+            // and check which key was pressed
+            var last_trial_correct = jsPsych.data.get().last(1).values()[0].correct;
+            if(last_trial_correct){
+                return false; // the parameter value has to be returned from the function
+            } else {
+                return true; // the parameter value has to be returned from the function
+            }
+        }
+    }
+    
+    var if_trial_speed = {
+        type: jsPsychHtmlKeyboardResponse,
+        stimulus: "<p><strong>You're going too fast.</strong><p>Please slow down and assess each triplet." +
+                "<p>Press 'y' to continue.</p></p>",
+        choices: ["y"]
+    }
+
+    var if_node_speed = {
+        timeline: [if_trial_speed],
+        conditional_function: function(){
+            // get the data from the previous trial,
+            // and check which key was pressed
+            var last_trial_speed = jsPsych.data.get().last(1).values()[0].speedy;
+            if(last_trial_speed){
+                return true; // the parameter value has to be returned from the function;
+            } else{
+                return false;
+            }
+        }
+    }
+
+    
+    // okay so this is to get a random set of elements...  
+    function getRandom(arr, n) {
+        var result = new Array(n),
+            len = arr.length,
+            taken = new Array(len);
+        if (n > len)
+            throw new RangeError("getRandom: more elements taken than available");
+        while (n--) {
+            var x = Math.floor(Math.random() * len);
+            result[n] = arr[x in taken ? taken[x] : x];
+            taken[x] = --len in taken ? taken[len] : len;
+        }
+        return result;
+    }
+        
+
+    var validation_procedure = {
+        timeline: [fixation, validation_trial, if_node_speed],
+        timeline_variables: validation_concat, //changed from just validation
+        //prompt: "Select the item most similar to the item on top",
+        sample :{
+            type: 'without-replacement',
+            size: 2 // CHANGE THIS if you want a different number of validation trials per block; originally 5
+        }
+    };
+
+        
+    var trial_procedure = {
+        timeline: [fixation, trial, if_node_speed],
+        timeline_variables: stimuli,
+        //tem most similar to the item on top",
+        randomize_order: true,
+         sample: {
+            type: 'with-replacement', //originally with replacement
+            size: 17 // CHANGE THIS if you want a different number of regular trials per block; it is originally 20
+        }
+    };
+
+    var check_procedure = {
+        timeline: [fixation, check_trial, if_node_check],
+        timeline_variables: check_shuffled,
+        //prompt: "Select the item most similar to the item on top",
+        sample: {
+            type: 'without-replacement',//originally without 
+            size: 1 // CHANGE THIS if you want a different number of check trials per block
+        }
+    };
+
+    var quick_break = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "Nice job! Feel free to take a quick break, then click 'Continue' when you are ready proceed to the next round." +
+        "<p>Remember, your task is to <strong>select the item most similar to the item on top.</strong>",
+        choices: ["Continue"]
+    };
+        
+
+    // x trials total
+        // 84 (52+32) are validation trials; 
+        // 714 are "regular" trials, so 238 trials per block
+            //17*42 = 714
+            //17*14 = 238, 238 * 3 = 714
+        // 42 attention checks (1 check per ~17 real trials, or 1 check for every 14 repetitions)
+    //in each block there are:
+        //238 "regular" trials
+        //14 attention checks
+        //28 validation trials
+
+    var procedure = {
+        timeline: [trial_procedure, check_procedure, validation_procedure],
+        randomize_order: true,
+        repetitions: 14
+    };
+        
+    // run the procedure 3 times with breaks in between
+    //all trials will be different; this repeats the *procedure*, not the trials
+    timeline.push(procedure);
+    timeline.push(quick_break);
+    timeline.push(procedure);
+    timeline.push(quick_break);
+    timeline.push(procedure);
+
+  //-----------------------------------------color vision check-----------------------------------------
+
+      // Ishihara color vision check //
+  var ishihara_instructions = {
+    type: jsPsychHtmlKeyboardResponse,
+        stimulus: 
+        "<p>Next, you will see an image on the screen." +
+        "<br>If you see a number in the image, please type that number in the box.</p>"+
+        "<p>If you do not see a number in the image, please type 'None' in the box."+
+        "<br>This part of the experiment will take about 1 minute.</p>"+
+        "<p>Please press the spacebar to begin.</p>",
+        post_trial_gap: 500,
+        choices: [" "]
+    };
+    timeline.push(ishihara_instructions);
+
+
+    //random function
+    function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return  Math.floor(Math.random() * (max - min + 1));
+        }
+    //
+
+    //Loop to present 11 ishihara plates of a unique type
+   var plateCounter = [0,0,0,0,0,0,0,0,0,0,0]
+   var numPlates = 11; 
+   for (plateNum = 0; plateNum < numPlates;){
+
+
+        //Randomly select which plate to present
+        var whichPlate = getRandomIntInclusive(0,10);
+
+        //always present this plate first
+        if (plateNum == 0){
+                whichPlate = 0;
+                answer  =  JSON.stringify({"ishihara":"12"});
+        }
+
+        // specify correct answer
+        if (whichPlate == 1){
+            answer = JSON.stringify({"ishihara":"8"});
+        }else if (whichPlate == 2){
+            answer = JSON.stringify({"ishihara":"5"}); 
+        }else if (whichPlate == 3){
+            answer = JSON.stringify({"ishihara":"29"}); 
+        }else if (whichPlate == 4){
+            answer = JSON.stringify({"ishihara":"74"});
+        }else if (whichPlate == 5){
+            answer = JSON.stringify({"ishihara":"7"}); 
+        }else if (whichPlate == 6){
+            answer = JSON.stringify({"ishihara":"45"});  
+        }else if (whichPlate == 7){
+            answer = JSON.stringify({"ishihara":"2"}); 
+        }else if (whichPlate == 8){
+            answer = JSON.stringify({"ishihara":"16"});
+        }else if (whichPlate == 9){
+            answer = JSON.stringify({"ishihara":"35"}); 
+        }else if (whichPlate == 10){
+            answer = JSON.stringify({"ishihara":"96"}); 
+
+        }   
+        //Check to ensure this plate not previously presented
+        if (plateCounter[whichPlate] == 0) {
+            //Present trial
+            var ishihara_plate = {
+                type: jsPsychImageTextResponseMAS,
+                stimulus: "ishiharaPlateImg/ishihara-"+whichPlate+".png", 
+                stimulus_height: 400, 
+                correctAnswer: answer,
+                on_start: function(trial) {
+                    correctAnswer = trial.correctAnswer}, //recorded in the "prompt" column of the output
+                questions: [
+                    { prompt: "Carefully type what number you see. "+
+                        "<p>If you do not see a number, type 'None'.",
+                    rows: 1, 
+                    columns: 1,
+                    required: true,
+                    name: 'ishihara'}],
+                    button_label: "Next",
+                    on_finish: function(data){
+                            if(data.responses == correctAnswer){
+                                data.correct = 1;  //correct
+                            } else {
+                                data.correct = 0;}} //incorrect
+                    }         
+            timeline.push(ishihara_plate) 
+            plateCounter[whichPlate] = 1; 
+            plateNum++
+        }
+    }
+
+
+    // Color Vision check //
+    var colorvision = {
+        type: jsPsychSurveyMultiSelect,
+        questions: [
+            {prompt: "Do you have difficulty seeing colors or noticing differences<br>between colors compared to the average person?",
+            options: ["Yes", "No"],
+            horizontal: false,
+            required: true, 
+            name: 'colorDifficulty'},
+
+            {prompt: "Do you consider yourself to be colorblind? ",
+            options: ["Yes", "No"],
+            horizontal: false,
+            required: true, 
+            name: 'colorBlind'},
+
+            {prompt: "What device did you use to complete this experiment?",
+            options: ["Computer", "Tablet", "Phone", "Other"],
+            horizontal: false,
+            required: true, 
+            name: 'device'}
+        ],
+        preamble: "",
+        button_label: "Done",
+        randomize_question_order: false,
+        }; 
+    timeline.push(colorvision); 
+ 
+    //-----------------------------------------end ishihara-----------------------------------------
+    
+var demographic_instructions = {
+      type: jsPsychHtmlButtonResponse,
+      stimulus: "<p>Thank you.<p>For this last part of the experiment, please provide us with information about yourself.</p> ",
+      choices: ["Continue"],
+      post_trial_gap: 1000
+    };
+timeline.push(demographic_instructions);
+      
+      
+var demographics = {
+    type: jsPsychSurveyMultiSelect,
+    questions: [
+      {prompt: "Which categories describe you? Select all that apply to you:", 
+        options: ["American Indian or Alaska Native - For example, Navajo Nation, Mayan", 
+                  "Asian - For example, Chinese, Asian Indian",
+                  "Black or African American - For example, Jamaican, Ethiopian",
+                  "Hispanic or Latino - For example, Mexican or Mexican American, Puerto Rican, Salvadoran",
+                 "Middle Eastern or North African - For example, Lebanese, Iranian, Moroccan",
+                 "Native Hawaiian or Other Pacific Islander - For example, Somoan, Fijian",
+                 "White - For example, German, Irish",
+                 "Some other race, ethnicity, or origin",
+                 "I prefer not to answer"], 
+        horizontal: false,
+        required: true,
+        name: 'race_eth'}
+    ]};
+    timeline.push(demographics);  
+
+    
+    var id_age = {
+      type: jsPsychSurveyText,     // CHANGE THIS (written survey questions)
+      questions: [{prompt: "Please enter your age (in years):", rows: 1, columns: 6, name: "age", required: true}, 
+                  {prompt: "How do you currently describe your gender identity? Please specify.", rows: 1, columns: 60, name: "gender"},
+                  {prompt: "What country do you live in?", rows : 1, columns: 40, name: "country"},
+                  {prompt: "What is your primary language?", rows : 1, columns: 40, name: "main_lang", required: true},
+                  {prompt: "Which other language(s) can you speak, if any?", rows : 1, columns: 40, name: "all_lang", required: true}
+                 ]
+    };
+    timeline.push(id_age);
+
+    var monitor_settings = {
+      type: jsPsychSurveyText,     // CHANGE THIS (written survey questions)
+      questions: [{prompt: "Please enter the make and model of your computer:", rows: 1, columns: 30, name: "monitor", required: true}, 
+                  {prompt: "If you have an external monitor that is different from the make/model of your computer, please enter the monitor model here. Otherwise, enter N/A.", rows: 1, columns: 30, name: "monitor2"},
+                  {prompt: "Please enter the color profile of your computer. On Mac, this can be found under Settings > Displays.", rows : 1, columns: 30, name: "color_profile"}
+                 ]
+    };
+    timeline.push(monitor_settings);
+      
+      
+   var goodbye = {
+      type: jsPsychHtmlButtonResponse,
+      stimulus: function(){
+        // the secret code changes for different experiments on Prolific
+        output = "<p>Great job! You have finished the experiment. <br> "
+        + "Many researchers argue that even though people can differ in their experiences, biological constraints "
+        + "lead to most having very similar representations of the world, so that, for example, our representations of "
+        + "animals remain very similar between people."
+        + "We think that the amount that people differ has been consistently underestimated. One way that we are testing for this is "
+        + "through similarity tasks like the one in this experiment. We expect that people will systematically differ in their "
+        + "perceptions of how similar colors are to each other."
+        + "You may now exit this page. Thank you for participating!</p>"
+        + "<strong> Here is your secret code: CBWFX0NG </strong><br> Goodbye!<br><br>";
+      return output;
+      },
+      choices: ["<a href='https://app.prolific.com/submissions/complete?cc=CBWFX0NG'>Complete Experiment</a>"]    
+      //choices: "NO_KEYS"
+   };
+  
+
+  
+
+    timeline.push(save_data);
+    timeline.push(goodbye);
+
+          //Exit fullscreen
+    timeline.push({
+    type: 'fullscreen',
+    fullscreen_mode: false
+    })
+
+      
+//     // this is to save to normal server
+//    function saveData(name, data){
+//      var xhr = new XMLHttpRequest();
+//      xhr.open('POST', 'data_write.php'); // 'write_data.php' is the path to the php file described above.
+//      xhr.setRequestHeader('Content-Type', 'application/json');
+//      xhr.send(JSON.stringify({filename: name, filedata: data}));
+//    }
+    
+
+      
+    jsPsych.run(timeline);
+
+
+  </script>
+  </html>
