@@ -63,10 +63,10 @@ async function createExperiment(){
     throw error;
   }
 
-  if(condition == 0) { timeline = condition_0_timeline, conditionName = "floodA"; }
-  if(condition == 1) { timeline = condition_1_timeline, conditionName = "floodB"; }
-  if(condition == 2) { timeline = condition_2_timeline, conditionName = "wildfireA"; }
-  if(condition == 3) { timeline = condition_3_timeline, conditionName = "wildfireB"; }
+  if(condition == 0) { timeline = condition_0_timeline, conditionName = "floodA", folderName = "flood", houseDestruction = "is destroyed by a flood", safe = "<img src='/house_not_flooded.jpg' style='max-width:300px;'>", destroyed = "<img src='/house_tsunami.jpg' style='max-width:300px;'>",disaster="flood"; }
+  if(condition == 1) { timeline = condition_1_timeline, conditionName = "floodB", folderName = "flood", houseDestruction = "is destroyed by a flood", safe = "<img src='/house_not_flooded.jpg' style='max-width:300px;'>", destroyed = "<img src='/house_tsunami.jpg' style='max-width:300px;'>",disaster="flood";}
+  if(condition == 2) { timeline = condition_2_timeline, conditionName = "wildfireA", folderName = "wildfire", houseDestruction = "is destroyed by a fire", safe = "<img src='/house_not_burned.jpg' style='max-width:300px;'>",  destroyed = "<img src='/house_wildfire.jpg' style='max-width:300px;'>",disaster="burn"; }
+  if(condition == 3) { timeline = condition_3_timeline, conditionName = "wildfireB", folderName = "wildfire", houseDestruction = "is destroyed by a fire", safe = "<img src='/house_not_burned.jpg' style='max-width:300px;'>", destroyed = "<img src='/house_wildfire.jpg' style='max-width:300px;'>",disaster="burn"; }
   jsPsych.run(timeline);
 }
 createExperiment();
@@ -218,23 +218,17 @@ const timeline = [];
     };
     timeline.push(consent);  
 
-    if (conditionName == "floodA"|conditionName=="floodB"){
-        example_img = "<p><img src='/stimuli/flood/example42_blues_light_3bands.png' style='max-width:300px;'><img src='/flood/example43_reds_dark_6bands.png' style='max-width:300px;'></p>"
-    }else{
-        example_img = "<p><img src='/stimuli/wildfire/example42_blues_light_3bands.png' style='max-width:300px;'><img src='/wildfire/example43_reds_dark_6bands.png' style='max-width:300px;'></p>"
-    }
-
     /* define testing instructions */
     var instructions1 = {
       type: jsPsychHtmlButtonResponse, // CHANGE THIS (instructions)
-      stimulus: "<p>During this experiment, you will see hazard maps showing the probability that a [wildfire/flood] will destroy a region.</br>" +
+      stimulus: "<p>During this experiment, you will see hazard maps showing the probability that a "+folderName+" will destroy a region.</br>" +
                 "Each map will have an X that represents the location of your house on the map. Your task will be to choose whether to</br>"+
                 "evacuate or to stay based on the information shown in each map.</p>" +
                 "<p>After you make your choice, you will be told whether your house burned down or whether it did not. Your goal is to make</br>" +
                 "the correct decision: evacuate a house that will burn down, and stay in a house that will not.</p>" +
                 "<p>Some trials will have no obvious answer.</p>"+
                 "<p>Below are some examples of the maps you will see.</p>"+
-                example_img +
+                "<p><img src='/stimuli/"+folderName+"/example42_blues_light_3bands.png' style='max-width:300px;'><img src='/"+folderName+"/example43_reds_dark_6bands.png' style='max-width:300px;'></p>"+
                 "<p>Click 'Continue' when you are ready to move to the next page.</p>",
         choices: ["Continue"],
         post_trial_gap: 2000,
@@ -248,11 +242,12 @@ const timeline = [];
    var instructions2 = {
       type: jsPsychHtmlButtonResponse, // CHANGE THIS (instructions)
       stimulus: "<p>You will be awarded points based on your performance on the task.</br>" +
-                "Points represent the real costs of decisions. Evacuating can be expensive and time-consuming," +
-                "but staying in place can be dangerous.</p>"+
-                "<p>You will <strong>earn</strong> points if you leave a house that burns down, or stay in a house that does not.</p>" +
-                "<p>You will <strong>lose</strong> points stay in a house that burns, or leave one that does not.</p>" +
-                "<p>Below is a chart showing how many points you will earn/lose for each decision. </p>" +
+                "Points represent the real costs of decisions: evacuating is expensive and" +
+                "time-consuming, but staying in place is dangerous.</p>"+
+                "<p>You will <strong>earn 5 points</strong> if you make the correct decision:</br>" +
+                "leave a house that"+houseDestruction+", or stay in a house that stays safe.</p>"+
+                "<p>You will <strong>lose 10 points</strong> if you stay in a house that"+houseDestruction+".</p>" +
+                "<p>Evacuating costs 2 points.</p>" +
                 "<p>You will not earn or lose real extra credit based on your decisions in this experiment.<br>" +
                 "However, please consider each decision carefully. The results of this study will help us understand<br>"+
                 "how to communicate about dangerous situations like natural disasters.</p>"+
@@ -273,10 +268,10 @@ const timeline = [];
   var practice = {
             type: jsPsychHtmlButtonResponse,
             prompt: "<p>Reminder: each time you make the correct decision, you will earn 5 points.<br>" +
-                    "Evacuating costs 2 points. You lose 10 points if you stay in a house that burns down.</p>"+
+                    "Evacuating costs 2 points. You lose 10 points if you stay in a house that"+houseDestruction+"</p>"+
                     "<p><strong>Current bonus cents:<strong>"+ bonus +"</p>",
             prompt_location: "above",
-            stimulus: stim_array[i],
+            stimulus: "<p><img src='/stimuli/"+ folderName + "/check41_blues_light_6bands.png' style='max-width:300px;'>",
             choices: ["Stay", "Evacuate"],
             post_trial_gap: 500
         }
@@ -289,7 +284,7 @@ const timeline = [];
         var test = {
             type: jsPsychHtmlButtonResponse,
             prompt: "<p>Reminder: each time you make the correct decision, you will earn 5 points.<br>" +
-                    "Evacuating costs 2 points. You lose 10 points if you stay in a house that burns down.</p>"+
+                    "Evacuating costs 2 points. You lose 10 points if you stay in a house that"+houseDestruction+"</p>"+
                     "<p><strong>Current bonus cents:<strong>"+ bonus +"</p>",
             prompt_location: "above",
             stimulus: stim_array[i],
@@ -298,18 +293,38 @@ const timeline = [];
         }
         timeline.push(test);
 
-        if (i == 96){
+        
         var check = {
             type: jsPsychHtmlButtonResponse,
             prompt: "<p>Reminder: each time you make the correct decision, you will earn 5 points.<br>" +
-                    "Evacuating costs 2 points. You lose 10 points if you stay in a house that burns down.</p>"+
+                    "Evacuating costs 2 points. You lose 10 points if you stay in a house that"+houseDestruction+"</p>"+
                     "<p><strong>Current bonus cents:<strong>"+ bonus +"</p>",
             prompt_location: "above",
-            stimulus: stim_array[i],
+            stimulus: check_array[i],
             choices: ["Stay", "Evacuate"],
             post_trial_gap: 500
-        }}
+        }
         timeline.push(check);
+
+        var destroyedResult = {
+            type: jsPsychHtmlKeyboardResponse,
+            prompt: "<p>Your house was in the"+disaster+"zone.</br>.",
+            prompt_location: "above",
+            stimulus: destroyed,
+            choices: [""],
+            trial_duration: 600
+        }
+        timeline.push(destroyed);
+
+        var safeResult = {
+            type: jsPsychHtmlKeyboardResponse,
+            prompt: "<p>Your house was not in the"+disaster+" zone!</br>",
+            prompt_location: "above",
+            stimulus: safe,
+            choices: [""],
+            trial_duration: 600
+        }
+        timeline.push(destroyed);
 
         if (i == 96){
             var progress = {
@@ -337,6 +352,23 @@ const timeline = [];
             }
         }
     }
+
+    if (conditionName == "floodA"|conditionName=="floodB"){
+        house_disaster = "flooding"
+    }else{
+        house_disaster = "burning down"
+    }
+
+        var comprehension = {
+            type: jsPsychHtmlButtonResponse,
+            stimulus: "<p>You have finished the main task. Before you move on to<br>" +
+                        "the final part of this study, there is a final comprehension question:</p>" +
+                        "</p>Which band on the map below represents the highest probability of your house" + house_disaster + "?<p>",
+            choices: ["Outer (lightest color)", "Middle", "Center (darkest color)"],
+            post_trial_gap: 500,
+            allow_keys: true}; //Prevents any input reponse from moving beyond the screen
+        timeline.push(comprehension)
+
 
 
   //-----------------------------------------color vision check-----------------------------------------
