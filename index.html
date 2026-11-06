@@ -18,8 +18,8 @@
     <script src="jspsych/plugin-call-function.js"></script>
     <script src="jspsych/plugin-preload.js"></script>
     <script src="jspsych/plugin-image-button-response.js"></script>
-    <script src ="stimNames.json"></script>
-    <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe"></script>
+    <script src ="allStimuli.js"></script>
+    <script src="https://unpkg.com/@jspsych/extension-pipe@0.2.0"></script>>
     <link href="jspsych/jspsych.css" rel="stylesheet" type="text/css" />
     
     <style>
@@ -42,48 +42,55 @@
    // <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe"><script>
     //<script src="https://unpkg.com/jspsych@7.3.4">
 
-    var jsPsych = initJsPsych({
-        show_progress_bar:false,
-        on_data_update: function(){
-            jsPsych.data.addProperties({worker_id: urlvar.workerId});
-        },
-        on_finish: function(){
-            jsPsych.data.addProperties({worker_id: urlvar.workerId});
-        },
-        max_load_time: 120000
-    });
+const jsPsych = initJsPsych({
+  extensions: [
+    {
+      type: jsPsychExtensionPipe,
+      params: {
+        experiment_id: "gRI46LcMijCx",
+        filename: () => `${subject_id}.csv`
+      }
+    }
+  ]
+});
+
+async function createExperiment(){
+  let condition;
+  try {
+    condition = await jsPsychExtensionPipe.getCondition("gRI46LcMijCx");
+  } catch (error) {
+    document.body.innerHTML = "<p>The experiment could not be started.</p>";
+    throw error;
+  }
+
+  if(condition == 0) { timeline = condition_0_timeline, conditionName = "floodA"; }
+  if(condition == 1) { timeline = condition_1_timeline, conditionName = "floodB"; }
+  if(condition == 2) { timeline = condition_2_timeline, conditionName = "wildfireA"; }
+  if(condition == 3) { timeline = condition_3_timeline, conditionName = "wildfireB"; }
+  jsPsych.run(timeline);
+}
+createExperiment();
+
+const subject_id = jsPsych.randomization.randomID(10);
+
+const timeline = [];
+// ...add your trials to the timeline...
 
     //set bg color to medium gray
     document.body.style.backgroundColor = "rgb(255,255,255)" //(D65 illuminant gray)
 
-    var jsPsych = initJsPsych();
 
 
     // generating a user id and file name for SONA
-    var secret_code = jsPsych.data.urlVariables().id;
-    var filename = "evac_" + secret_code + "_.csv"; // CHANGE THIS (file name)
+    var secretCode = jsPsych.data.urlVariables().id;
+    var filename = "evac_" + secretCode + "_" + conditionName + ".csv"; // CHANGE THIS (file name)
 
-
-
-    // this is to save to OSF using DataPipe
-    //if want to save data more often, copy this and change the name, and save halfway through
-      const save_data = { 
-        type: jsPsychPipe,
-        action: "save",
-        experiment_id: "fL1GbwczvGKV", // SONA = "W31dcwJTrTgj", //change this for different experiments in datapipe
-        filename: filename,
-        data_string: ()=>jsPsych.data.get().csv()
-      };
-
-          /* create timeline */
-    var timeline = [];
-      
 
     // preload stimuli
     var preload = {
         type: jsPsychPreload,
         auto_preload: true,
-        images: colorHex,
+        images: allStimuli,
         show_progress_bar: true,
         message: "Loading experiment files...",
         error_message: "Oops! There's a problem loading files. Please refresh the page to try again."
@@ -148,14 +155,6 @@
       type: jsPsychFullscreen,
       fullscreen_mode: true
     });    
-         
-    /* define consent trail 
-    var consent = {
-        type: jsPsychImageButtonResponse,
-        stimulus: "kc_lab_consent_prolific.png", // CHANGE THIS (to Mturk/Prolific or SONA depending on your sample)
-        choices: ["Consent & Continue"]
-    };
-    timeline.push(consent);*/
 
     var consent = {
         type: jsPsychHtmlButtonResponse, // CHANGE THIS (instructions)
@@ -219,7 +218,12 @@
     };
     timeline.push(consent);  
 
-          
+    if (conditionName == "floodA"|conditionName=="floodB"){
+        example_img = "<p><img src='/stimuli/flood/example42_blues_light_3bands.png' style='max-width:300px;'><img src='/flood/example43_reds_dark_6bands.png' style='max-width:300px;'></p>"
+    }else{
+        example_img = "<p><img src='/stimuli/wildfire/example42_blues_light_3bands.png' style='max-width:300px;'><img src='/wildfire/example43_reds_dark_6bands.png' style='max-width:300px;'></p>"
+    }
+
     /* define testing instructions */
     var instructions1 = {
       type: jsPsychHtmlButtonResponse, // CHANGE THIS (instructions)
@@ -230,6 +234,7 @@
                 "the correct decision: evacuate a house that will burn down, and stay in a house that will not.</p>" +
                 "<p>Some trials will have no obvious answer.</p>"+
                 "<p>Below are some examples of the maps you will see.</p>"+
+                example_img +
                 "<p>Click 'Continue' when you are ready to move to the next page.</p>",
         choices: ["Continue"],
         post_trial_gap: 2000,
@@ -265,6 +270,18 @@
 
   stim_array = jsPsych.randomization.shuffle(test_stimuli);
 
+  var practice = {
+            type: jsPsychHtmlButtonResponse,
+            prompt: "<p>Reminder: each time you make the correct decision, you will earn 5 points.<br>" +
+                    "Evacuating costs 2 points. You lose 10 points if you stay in a house that burns down.</p>"+
+                    "<p><strong>Current bonus cents:<strong>"+ bonus +"</p>",
+            prompt_location: "above",
+            stimulus: stim_array[i],
+            choices: ["Stay", "Evacuate"],
+            post_trial_gap: 500
+        }
+        timeline.push(practice);
+
 
     //for each object in the stimulus array, make a trial
     for(i = 0; i < stim_array.length; i++){
@@ -280,6 +297,19 @@
             post_trial_gap: 500
         }
         timeline.push(test);
+
+        if (i == 96){
+        var check = {
+            type: jsPsychHtmlButtonResponse,
+            prompt: "<p>Reminder: each time you make the correct decision, you will earn 5 points.<br>" +
+                    "Evacuating costs 2 points. You lose 10 points if you stay in a house that burns down.</p>"+
+                    "<p><strong>Current bonus cents:<strong>"+ bonus +"</p>",
+            prompt_location: "above",
+            stimulus: stim_array[i],
+            choices: ["Stay", "Evacuate"],
+            post_trial_gap: 500
+        }}
+        timeline.push(check);
 
         if (i == 96){
             var progress = {
