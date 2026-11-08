@@ -2,34 +2,34 @@
 var stimLists = {
   "flood_A": [
     {
-      "stimulus": "stimuli/flood/shape01_blues_light_3bands.png",
+      "stimulus": "stimuli/flood/shape01_blues_dark_3bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 1,
       "color": "blue",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape01_reds_dark_6bands.png",
+      "stimulus": "stimuli/flood/shape01_reds_light_3bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 1,
       "color": "red",
-      "lightness": "dark",
-      "bands": 6
+      "lightness": "light",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape02_blues_light_6bands.png",
+      "stimulus": "stimuli/flood/shape02_blues_light_3bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 2,
       "color": "blue",
       "lightness": "light",
-      "bands": 6
+      "bands": 3
     },
     {
       "stimulus": "stimuli/flood/shape02_reds_dark_3bands.png",
@@ -52,53 +52,53 @@ var stimLists = {
       "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape03_reds_light_6bands.png",
+      "stimulus": "stimuli/flood/shape03_reds_light_3bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 3,
       "color": "red",
       "lightness": "light",
-      "bands": 6
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape04_blues_dark_6bands.png",
+      "stimulus": "stimuli/flood/shape04_blues_light_3bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 4,
       "color": "blue",
-      "lightness": "dark",
-      "bands": 6
+      "lightness": "light",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape04_reds_light_3bands.png",
+      "stimulus": "stimuli/flood/shape04_reds_dark_3bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 4,
       "color": "red",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape05_blues_dark_3bands.png",
+      "stimulus": "stimuli/flood/shape05_blues_light_6bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 5,
       "color": "blue",
-      "lightness": "dark",
-      "bands": 3
+      "lightness": "light",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape05_reds_light_6bands.png",
+      "stimulus": "stimuli/flood/shape05_reds_dark_6bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 5,
       "color": "red",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 6
     },
     {
@@ -112,24 +112,24 @@ var stimLists = {
       "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape06_reds_dark_6bands.png",
+      "stimulus": "stimuli/flood/shape06_reds_dark_3bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 6,
       "color": "red",
       "lightness": "dark",
-      "bands": 6
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape07_blues_light_3bands.png",
+      "stimulus": "stimuli/flood/shape07_blues_light_6bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 7,
       "color": "blue",
       "lightness": "light",
-      "bands": 3
+      "bands": 6
     },
     {
       "stimulus": "stimuli/flood/shape07_reds_dark_6bands.png",
@@ -142,23 +142,23 @@ var stimLists = {
       "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape08_blues_light_3bands.png",
+      "stimulus": "stimuli/flood/shape08_blues_dark_6bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 8,
       "color": "blue",
-      "lightness": "light",
-      "bands": 3
+      "lightness": "dark",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape08_reds_dark_6bands.png",
+      "stimulus": "stimuli/flood/shape08_reds_light_6bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 8,
       "color": "red",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 6
     },
     {
@@ -172,44 +172,44 @@ var stimLists = {
       "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape09_reds_light_6bands.png",
+      "stimulus": "stimuli/flood/shape09_reds_light_3bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 9,
       "color": "red",
       "lightness": "light",
-      "bands": 6
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape10_blues_dark_6bands.png",
+      "stimulus": "stimuli/flood/shape10_blues_light_3bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 10,
       "color": "blue",
-      "lightness": "dark",
-      "bands": 6
+      "lightness": "light",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape10_reds_light_3bands.png",
+      "stimulus": "stimuli/flood/shape10_reds_dark_3bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 10,
       "color": "red",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape11_blues_light_3bands.png",
+      "stimulus": "stimuli/flood/shape11_blues_light_6bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 11,
       "color": "blue",
       "lightness": "light",
-      "bands": 3
+      "bands": 6
     },
     {
       "stimulus": "stimuli/flood/shape11_reds_dark_6bands.png",
@@ -232,33 +232,33 @@ var stimLists = {
       "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape12_reds_light_3bands.png",
+      "stimulus": "stimuli/flood/shape12_reds_light_6bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 12,
       "color": "red",
       "lightness": "light",
-      "bands": 3
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape13_blues_light_6bands.png",
+      "stimulus": "stimuli/flood/shape13_blues_dark_3bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 13,
       "color": "blue",
-      "lightness": "light",
-      "bands": 6
+      "lightness": "dark",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape13_reds_dark_3bands.png",
+      "stimulus": "stimuli/flood/shape13_reds_light_3bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 13,
       "color": "red",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 3
     },
     {
@@ -272,54 +272,54 @@ var stimLists = {
       "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape14_reds_light_3bands.png",
+      "stimulus": "stimuli/flood/shape14_reds_light_6bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 14,
       "color": "red",
       "lightness": "light",
-      "bands": 3
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape15_blues_dark_3bands.png",
+      "stimulus": "stimuli/flood/shape15_blues_light_6bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 15,
       "color": "blue",
-      "lightness": "dark",
-      "bands": 3
+      "lightness": "light",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape15_reds_light_6bands.png",
+      "stimulus": "stimuli/flood/shape15_reds_dark_6bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 15,
       "color": "red",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape16_blues_dark_3bands.png",
+      "stimulus": "stimuli/flood/shape16_blues_light_3bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 16,
       "color": "blue",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape16_reds_light_6bands.png",
+      "stimulus": "stimuli/flood/shape16_reds_dark_3bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 16,
       "color": "red",
-      "lightness": "light",
-      "bands": 6
+      "lightness": "dark",
+      "bands": 3
     },
     {
       "stimulus": "stimuli/flood/shape17_blues_light_6bands.png",
@@ -332,33 +332,33 @@ var stimLists = {
       "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape17_reds_dark_3bands.png",
+      "stimulus": "stimuli/flood/shape17_reds_dark_6bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 17,
       "color": "red",
       "lightness": "dark",
-      "bands": 3
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape18_blues_light_3bands.png",
+      "stimulus": "stimuli/flood/shape18_blues_dark_6bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 18,
       "color": "blue",
-      "lightness": "light",
-      "bands": 3
+      "lightness": "dark",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape18_reds_dark_6bands.png",
+      "stimulus": "stimuli/flood/shape18_reds_light_6bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 18,
       "color": "red",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 6
     },
     {
@@ -372,24 +372,24 @@ var stimLists = {
       "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape19_reds_dark_3bands.png",
+      "stimulus": "stimuli/flood/shape19_reds_dark_6bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 19,
       "color": "red",
       "lightness": "dark",
-      "bands": 3
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape20_blues_dark_3bands.png",
+      "stimulus": "stimuli/flood/shape20_blues_dark_6bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 20,
       "color": "blue",
       "lightness": "dark",
-      "bands": 3
+      "bands": 6
     },
     {
       "stimulus": "stimuli/flood/shape20_reds_light_6bands.png",
@@ -402,74 +402,74 @@ var stimLists = {
       "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape21_blues_light_6bands.png",
+      "stimulus": "stimuli/flood/shape21_blues_dark_3bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 21,
       "color": "blue",
-      "lightness": "light",
-      "bands": 6
+      "lightness": "dark",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape21_reds_dark_3bands.png",
+      "stimulus": "stimuli/flood/shape21_reds_light_3bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 21,
       "color": "red",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape22_blues_dark_6bands.png",
+      "stimulus": "stimuli/flood/shape22_blues_light_3bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 22,
       "color": "blue",
-      "lightness": "dark",
-      "bands": 6
+      "lightness": "light",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape22_reds_light_3bands.png",
+      "stimulus": "stimuli/flood/shape22_reds_dark_3bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 22,
       "color": "red",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape23_blues_dark_6bands.png",
+      "stimulus": "stimuli/flood/shape23_blues_light_6bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 23,
       "color": "blue",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape23_reds_light_3bands.png",
+      "stimulus": "stimuli/flood/shape23_reds_dark_6bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 23,
       "color": "red",
-      "lightness": "light",
-      "bands": 3
+      "lightness": "dark",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape24_blues_dark_3bands.png",
+      "stimulus": "stimuli/flood/shape24_blues_dark_6bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 24,
       "color": "blue",
       "lightness": "dark",
-      "bands": 3
+      "bands": 6
     },
     {
       "stimulus": "stimuli/flood/shape24_reds_light_6bands.png",
@@ -482,54 +482,54 @@ var stimLists = {
       "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape25_blues_light_6bands.png",
+      "stimulus": "stimuli/flood/shape25_blues_dark_3bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 25,
       "color": "blue",
-      "lightness": "light",
-      "bands": 6
+      "lightness": "dark",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape25_reds_dark_3bands.png",
+      "stimulus": "stimuli/flood/shape25_reds_light_3bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 25,
       "color": "red",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape26_blues_light_6bands.png",
+      "stimulus": "stimuli/flood/shape26_blues_dark_6bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 26,
       "color": "blue",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape26_reds_dark_3bands.png",
+      "stimulus": "stimuli/flood/shape26_reds_light_6bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 26,
       "color": "red",
-      "lightness": "dark",
-      "bands": 3
+      "lightness": "light",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape27_blues_light_3bands.png",
+      "stimulus": "stimuli/flood/shape27_blues_light_6bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "shape",
       "shape": 27,
       "color": "blue",
       "lightness": "light",
-      "bands": 3
+      "bands": 6
     },
     {
       "stimulus": "stimuli/flood/shape27_reds_dark_6bands.png",
@@ -542,86 +542,256 @@ var stimLists = {
       "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/check28_blues_light_3bands.png",
+      "stimulus": "stimuli/flood/shape28_blues_light_3bands.png",
       "hazard": "flood",
       "list": "A",
-      "trial_type": "check",
+      "trial_type": "shape",
       "shape": 28,
       "color": "blue",
       "lightness": "light",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/check29_reds_dark_3bands.png",
+      "stimulus": "stimuli/flood/shape28_reds_dark_3bands.png",
       "hazard": "flood",
       "list": "A",
-      "trial_type": "check",
-      "shape": 29,
+      "trial_type": "shape",
+      "shape": 28,
       "color": "red",
       "lightness": "dark",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/check30_blues_dark_6bands.png",
+      "stimulus": "stimuli/flood/shape29_blues_light_6bands.png",
       "hazard": "flood",
       "list": "A",
-      "trial_type": "check",
+      "trial_type": "shape",
+      "shape": 29,
+      "color": "blue",
+      "lightness": "light",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/flood/shape29_reds_dark_6bands.png",
+      "hazard": "flood",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 29,
+      "color": "red",
+      "lightness": "dark",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/flood/shape30_blues_dark_6bands.png",
+      "hazard": "flood",
+      "list": "A",
+      "trial_type": "shape",
       "shape": 30,
       "color": "blue",
       "lightness": "dark",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/check31_reds_light_6bands.png",
+      "stimulus": "stimuli/flood/shape30_reds_light_6bands.png",
       "hazard": "flood",
       "list": "A",
-      "trial_type": "check",
-      "shape": 31,
+      "trial_type": "shape",
+      "shape": 30,
       "color": "red",
       "lightness": "light",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/check32_blues_light_6bands.png",
+      "stimulus": "stimuli/flood/shape31_blues_dark_3bands.png",
+      "hazard": "flood",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 31,
+      "color": "blue",
+      "lightness": "dark",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/flood/shape31_reds_light_3bands.png",
+      "hazard": "flood",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 31,
+      "color": "red",
+      "lightness": "light",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/flood/shape32_blues_light_3bands.png",
+      "hazard": "flood",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 32,
+      "color": "blue",
+      "lightness": "light",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/flood/shape32_reds_dark_3bands.png",
+      "hazard": "flood",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 32,
+      "color": "red",
+      "lightness": "dark",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/flood/shape33_blues_dark_3bands.png",
+      "hazard": "flood",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 33,
+      "color": "blue",
+      "lightness": "dark",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/flood/shape33_reds_light_3bands.png",
+      "hazard": "flood",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 33,
+      "color": "red",
+      "lightness": "light",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/flood/shape34_blues_light_3bands.png",
+      "hazard": "flood",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 34,
+      "color": "blue",
+      "lightness": "light",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/flood/shape34_reds_dark_3bands.png",
+      "hazard": "flood",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 34,
+      "color": "red",
+      "lightness": "dark",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/flood/shape35_blues_dark_3bands.png",
+      "hazard": "flood",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 35,
+      "color": "blue",
+      "lightness": "dark",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/flood/shape35_reds_light_3bands.png",
+      "hazard": "flood",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 35,
+      "color": "red",
+      "lightness": "light",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/flood/shape36_blues_dark_6bands.png",
+      "hazard": "flood",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 36,
+      "color": "blue",
+      "lightness": "dark",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/flood/shape36_reds_light_6bands.png",
+      "hazard": "flood",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 36,
+      "color": "red",
+      "lightness": "light",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/flood/check37_blues_light_6bands.png",
       "hazard": "flood",
       "list": "A",
       "trial_type": "check",
-      "shape": 32,
+      "shape": 37,
       "color": "blue",
+      "lightness": "light",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/flood/check38_reds_dark_3bands.png",
+      "hazard": "flood",
+      "list": "A",
+      "trial_type": "check",
+      "shape": 38,
+      "color": "red",
+      "lightness": "dark",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/flood/check39_blues_dark_3bands.png",
+      "hazard": "flood",
+      "list": "A",
+      "trial_type": "check",
+      "shape": 39,
+      "color": "blue",
+      "lightness": "dark",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/flood/check40_reds_light_6bands.png",
+      "hazard": "flood",
+      "list": "A",
+      "trial_type": "check",
+      "shape": 40,
+      "color": "red",
       "lightness": "light",
       "bands": 6
     }
   ],
   "flood_B": [
     {
-      "stimulus": "stimuli/flood/shape01_blues_dark_6bands.png",
+      "stimulus": "stimuli/flood/shape01_blues_light_6bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 1,
       "color": "blue",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape01_reds_light_3bands.png",
+      "stimulus": "stimuli/flood/shape01_reds_dark_6bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 1,
       "color": "red",
-      "lightness": "light",
-      "bands": 3
+      "lightness": "dark",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape02_blues_dark_3bands.png",
+      "stimulus": "stimuli/flood/shape02_blues_dark_6bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 2,
       "color": "blue",
       "lightness": "dark",
-      "bands": 3
+      "bands": 6
     },
     {
       "stimulus": "stimuli/flood/shape02_reds_light_6bands.png",
@@ -644,53 +814,53 @@ var stimLists = {
       "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape03_reds_dark_3bands.png",
+      "stimulus": "stimuli/flood/shape03_reds_dark_6bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 3,
       "color": "red",
       "lightness": "dark",
-      "bands": 3
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape04_blues_light_3bands.png",
+      "stimulus": "stimuli/flood/shape04_blues_dark_6bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 4,
       "color": "blue",
-      "lightness": "light",
-      "bands": 3
+      "lightness": "dark",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape04_reds_dark_6bands.png",
+      "stimulus": "stimuli/flood/shape04_reds_light_6bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 4,
       "color": "red",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape05_blues_light_6bands.png",
+      "stimulus": "stimuli/flood/shape05_blues_dark_3bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 5,
       "color": "blue",
-      "lightness": "light",
-      "bands": 6
+      "lightness": "dark",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape05_reds_dark_3bands.png",
+      "stimulus": "stimuli/flood/shape05_reds_light_3bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 5,
       "color": "red",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 3
     },
     {
@@ -704,24 +874,24 @@ var stimLists = {
       "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape06_reds_light_3bands.png",
+      "stimulus": "stimuli/flood/shape06_reds_light_6bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 6,
       "color": "red",
       "lightness": "light",
-      "bands": 3
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape07_blues_dark_6bands.png",
+      "stimulus": "stimuli/flood/shape07_blues_dark_3bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 7,
       "color": "blue",
       "lightness": "dark",
-      "bands": 6
+      "bands": 3
     },
     {
       "stimulus": "stimuli/flood/shape07_reds_light_3bands.png",
@@ -734,23 +904,23 @@ var stimLists = {
       "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape08_blues_dark_6bands.png",
+      "stimulus": "stimuli/flood/shape08_blues_light_3bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 8,
       "color": "blue",
-      "lightness": "dark",
-      "bands": 6
+      "lightness": "light",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape08_reds_light_3bands.png",
+      "stimulus": "stimuli/flood/shape08_reds_dark_3bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 8,
       "color": "red",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 3
     },
     {
@@ -764,44 +934,44 @@ var stimLists = {
       "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape09_reds_dark_3bands.png",
+      "stimulus": "stimuli/flood/shape09_reds_dark_6bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 9,
       "color": "red",
       "lightness": "dark",
-      "bands": 3
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape10_blues_light_3bands.png",
+      "stimulus": "stimuli/flood/shape10_blues_dark_6bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 10,
       "color": "blue",
-      "lightness": "light",
-      "bands": 3
+      "lightness": "dark",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape10_reds_dark_6bands.png",
+      "stimulus": "stimuli/flood/shape10_reds_light_6bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 10,
       "color": "red",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape11_blues_dark_6bands.png",
+      "stimulus": "stimuli/flood/shape11_blues_dark_3bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 11,
       "color": "blue",
       "lightness": "dark",
-      "bands": 6
+      "bands": 3
     },
     {
       "stimulus": "stimuli/flood/shape11_reds_light_3bands.png",
@@ -824,33 +994,33 @@ var stimLists = {
       "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape12_reds_dark_6bands.png",
+      "stimulus": "stimuli/flood/shape12_reds_dark_3bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 12,
       "color": "red",
       "lightness": "dark",
-      "bands": 6
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape13_blues_dark_3bands.png",
+      "stimulus": "stimuli/flood/shape13_blues_light_6bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 13,
       "color": "blue",
-      "lightness": "dark",
-      "bands": 3
+      "lightness": "light",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape13_reds_light_6bands.png",
+      "stimulus": "stimuli/flood/shape13_reds_dark_6bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 13,
       "color": "red",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 6
     },
     {
@@ -864,54 +1034,54 @@ var stimLists = {
       "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape14_reds_dark_6bands.png",
+      "stimulus": "stimuli/flood/shape14_reds_dark_3bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 14,
       "color": "red",
       "lightness": "dark",
-      "bands": 6
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape15_blues_light_6bands.png",
+      "stimulus": "stimuli/flood/shape15_blues_dark_3bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 15,
       "color": "blue",
-      "lightness": "light",
-      "bands": 6
+      "lightness": "dark",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape15_reds_dark_3bands.png",
+      "stimulus": "stimuli/flood/shape15_reds_light_3bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 15,
       "color": "red",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape16_blues_light_6bands.png",
+      "stimulus": "stimuli/flood/shape16_blues_dark_6bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 16,
       "color": "blue",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape16_reds_dark_3bands.png",
+      "stimulus": "stimuli/flood/shape16_reds_light_6bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 16,
       "color": "red",
-      "lightness": "dark",
-      "bands": 3
+      "lightness": "light",
+      "bands": 6
     },
     {
       "stimulus": "stimuli/flood/shape17_blues_dark_3bands.png",
@@ -924,33 +1094,33 @@ var stimLists = {
       "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape17_reds_light_6bands.png",
+      "stimulus": "stimuli/flood/shape17_reds_light_3bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 17,
       "color": "red",
       "lightness": "light",
-      "bands": 6
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape18_blues_dark_6bands.png",
+      "stimulus": "stimuli/flood/shape18_blues_light_3bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 18,
       "color": "blue",
-      "lightness": "dark",
-      "bands": 6
+      "lightness": "light",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape18_reds_light_3bands.png",
+      "stimulus": "stimuli/flood/shape18_reds_dark_3bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 18,
       "color": "red",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 3
     },
     {
@@ -964,24 +1134,24 @@ var stimLists = {
       "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape19_reds_light_6bands.png",
+      "stimulus": "stimuli/flood/shape19_reds_light_3bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 19,
       "color": "red",
       "lightness": "light",
-      "bands": 6
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape20_blues_light_6bands.png",
+      "stimulus": "stimuli/flood/shape20_blues_light_3bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 20,
       "color": "blue",
       "lightness": "light",
-      "bands": 6
+      "bands": 3
     },
     {
       "stimulus": "stimuli/flood/shape20_reds_dark_3bands.png",
@@ -994,74 +1164,74 @@ var stimLists = {
       "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape21_blues_dark_3bands.png",
+      "stimulus": "stimuli/flood/shape21_blues_light_6bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 21,
       "color": "blue",
-      "lightness": "dark",
-      "bands": 3
+      "lightness": "light",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape21_reds_light_6bands.png",
+      "stimulus": "stimuli/flood/shape21_reds_dark_6bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 21,
       "color": "red",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape22_blues_light_3bands.png",
+      "stimulus": "stimuli/flood/shape22_blues_dark_6bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 22,
       "color": "blue",
-      "lightness": "light",
-      "bands": 3
+      "lightness": "dark",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape22_reds_dark_6bands.png",
+      "stimulus": "stimuli/flood/shape22_reds_light_6bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 22,
       "color": "red",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape23_blues_light_3bands.png",
+      "stimulus": "stimuli/flood/shape23_blues_dark_3bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 23,
       "color": "blue",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape23_reds_dark_6bands.png",
+      "stimulus": "stimuli/flood/shape23_reds_light_3bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 23,
       "color": "red",
-      "lightness": "dark",
-      "bands": 6
+      "lightness": "light",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape24_blues_light_6bands.png",
+      "stimulus": "stimuli/flood/shape24_blues_light_3bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 24,
       "color": "blue",
       "lightness": "light",
-      "bands": 6
+      "bands": 3
     },
     {
       "stimulus": "stimuli/flood/shape24_reds_dark_3bands.png",
@@ -1074,54 +1244,54 @@ var stimLists = {
       "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape25_blues_dark_3bands.png",
+      "stimulus": "stimuli/flood/shape25_blues_light_6bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 25,
       "color": "blue",
-      "lightness": "dark",
-      "bands": 3
+      "lightness": "light",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape25_reds_light_6bands.png",
+      "stimulus": "stimuli/flood/shape25_reds_dark_6bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 25,
       "color": "red",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/shape26_blues_dark_3bands.png",
+      "stimulus": "stimuli/flood/shape26_blues_light_3bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 26,
       "color": "blue",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape26_reds_light_6bands.png",
+      "stimulus": "stimuli/flood/shape26_reds_dark_3bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 26,
       "color": "red",
-      "lightness": "light",
-      "bands": 6
+      "lightness": "dark",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/shape27_blues_dark_6bands.png",
+      "stimulus": "stimuli/flood/shape27_blues_dark_3bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "shape",
       "shape": 27,
       "color": "blue",
       "lightness": "dark",
-      "bands": 6
+      "bands": 3
     },
     {
       "stimulus": "stimuli/flood/shape27_reds_light_3bands.png",
@@ -1134,86 +1304,256 @@ var stimLists = {
       "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/check28_reds_dark_6bands.png",
+      "stimulus": "stimuli/flood/shape28_blues_dark_6bands.png",
       "hazard": "flood",
       "list": "B",
-      "trial_type": "check",
+      "trial_type": "shape",
+      "shape": 28,
+      "color": "blue",
+      "lightness": "dark",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/flood/shape28_reds_light_6bands.png",
+      "hazard": "flood",
+      "list": "B",
+      "trial_type": "shape",
       "shape": 28,
       "color": "red",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/check29_blues_light_6bands.png",
+      "stimulus": "stimuli/flood/shape29_blues_dark_3bands.png",
       "hazard": "flood",
       "list": "B",
-      "trial_type": "check",
+      "trial_type": "shape",
       "shape": 29,
       "color": "blue",
+      "lightness": "dark",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/flood/shape29_reds_light_3bands.png",
+      "hazard": "flood",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 29,
+      "color": "red",
+      "lightness": "light",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/flood/shape30_blues_light_3bands.png",
+      "hazard": "flood",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 30,
+      "color": "blue",
+      "lightness": "light",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/flood/shape30_reds_dark_3bands.png",
+      "hazard": "flood",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 30,
+      "color": "red",
+      "lightness": "dark",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/flood/shape31_blues_light_6bands.png",
+      "hazard": "flood",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 31,
+      "color": "blue",
       "lightness": "light",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/check30_reds_light_3bands.png",
+      "stimulus": "stimuli/flood/shape31_reds_dark_6bands.png",
+      "hazard": "flood",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 31,
+      "color": "red",
+      "lightness": "dark",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/flood/shape32_blues_dark_6bands.png",
+      "hazard": "flood",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 32,
+      "color": "blue",
+      "lightness": "dark",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/flood/shape32_reds_light_6bands.png",
+      "hazard": "flood",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 32,
+      "color": "red",
+      "lightness": "light",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/flood/shape33_blues_light_6bands.png",
+      "hazard": "flood",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 33,
+      "color": "blue",
+      "lightness": "light",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/flood/shape33_reds_dark_6bands.png",
+      "hazard": "flood",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 33,
+      "color": "red",
+      "lightness": "dark",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/flood/shape34_blues_dark_6bands.png",
+      "hazard": "flood",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 34,
+      "color": "blue",
+      "lightness": "dark",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/flood/shape34_reds_light_6bands.png",
+      "hazard": "flood",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 34,
+      "color": "red",
+      "lightness": "light",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/flood/shape35_blues_light_6bands.png",
+      "hazard": "flood",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 35,
+      "color": "blue",
+      "lightness": "light",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/flood/shape35_reds_dark_6bands.png",
+      "hazard": "flood",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 35,
+      "color": "red",
+      "lightness": "dark",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/flood/shape36_blues_light_3bands.png",
+      "hazard": "flood",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 36,
+      "color": "blue",
+      "lightness": "light",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/flood/shape36_reds_dark_3bands.png",
+      "hazard": "flood",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 36,
+      "color": "red",
+      "lightness": "dark",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/flood/check37_reds_light_3bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "check",
-      "shape": 30,
+      "shape": 37,
       "color": "red",
       "lightness": "light",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/flood/check31_blues_dark_3bands.png",
+      "stimulus": "stimuli/flood/check38_blues_dark_6bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "check",
-      "shape": 31,
+      "shape": 38,
       "color": "blue",
       "lightness": "dark",
-      "bands": 3
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/flood/check32_reds_dark_3bands.png",
+      "stimulus": "stimuli/flood/check39_reds_dark_6bands.png",
       "hazard": "flood",
       "list": "B",
       "trial_type": "check",
-      "shape": 32,
+      "shape": 39,
       "color": "red",
       "lightness": "dark",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/flood/check40_blues_light_3bands.png",
+      "hazard": "flood",
+      "list": "B",
+      "trial_type": "check",
+      "shape": 40,
+      "color": "blue",
+      "lightness": "light",
       "bands": 3
     }
   ],
   "wildfire_A": [
     {
-      "stimulus": "stimuli/wildfire/shape01_blues_light_3bands.png",
+      "stimulus": "stimuli/wildfire/shape01_blues_dark_3bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 1,
       "color": "blue",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape01_reds_dark_6bands.png",
+      "stimulus": "stimuli/wildfire/shape01_reds_light_3bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 1,
       "color": "red",
-      "lightness": "dark",
-      "bands": 6
+      "lightness": "light",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape02_blues_light_6bands.png",
+      "stimulus": "stimuli/wildfire/shape02_blues_light_3bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 2,
       "color": "blue",
       "lightness": "light",
-      "bands": 6
+      "bands": 3
     },
     {
       "stimulus": "stimuli/wildfire/shape02_reds_dark_3bands.png",
@@ -1236,53 +1576,53 @@ var stimLists = {
       "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape03_reds_light_6bands.png",
+      "stimulus": "stimuli/wildfire/shape03_reds_light_3bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 3,
       "color": "red",
       "lightness": "light",
-      "bands": 6
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape04_blues_dark_6bands.png",
+      "stimulus": "stimuli/wildfire/shape04_blues_light_3bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 4,
       "color": "blue",
-      "lightness": "dark",
-      "bands": 6
+      "lightness": "light",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape04_reds_light_3bands.png",
+      "stimulus": "stimuli/wildfire/shape04_reds_dark_3bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 4,
       "color": "red",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape05_blues_dark_3bands.png",
+      "stimulus": "stimuli/wildfire/shape05_blues_light_6bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 5,
       "color": "blue",
-      "lightness": "dark",
-      "bands": 3
+      "lightness": "light",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape05_reds_light_6bands.png",
+      "stimulus": "stimuli/wildfire/shape05_reds_dark_6bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 5,
       "color": "red",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 6
     },
     {
@@ -1296,24 +1636,24 @@ var stimLists = {
       "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape06_reds_dark_6bands.png",
+      "stimulus": "stimuli/wildfire/shape06_reds_dark_3bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 6,
       "color": "red",
       "lightness": "dark",
-      "bands": 6
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape07_blues_light_3bands.png",
+      "stimulus": "stimuli/wildfire/shape07_blues_light_6bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 7,
       "color": "blue",
       "lightness": "light",
-      "bands": 3
+      "bands": 6
     },
     {
       "stimulus": "stimuli/wildfire/shape07_reds_dark_6bands.png",
@@ -1326,23 +1666,23 @@ var stimLists = {
       "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape08_blues_light_3bands.png",
+      "stimulus": "stimuli/wildfire/shape08_blues_dark_6bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 8,
       "color": "blue",
-      "lightness": "light",
-      "bands": 3
+      "lightness": "dark",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape08_reds_dark_6bands.png",
+      "stimulus": "stimuli/wildfire/shape08_reds_light_6bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 8,
       "color": "red",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 6
     },
     {
@@ -1356,44 +1696,44 @@ var stimLists = {
       "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape09_reds_light_6bands.png",
+      "stimulus": "stimuli/wildfire/shape09_reds_light_3bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 9,
       "color": "red",
       "lightness": "light",
-      "bands": 6
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape10_blues_dark_6bands.png",
+      "stimulus": "stimuli/wildfire/shape10_blues_light_3bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 10,
       "color": "blue",
-      "lightness": "dark",
-      "bands": 6
+      "lightness": "light",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape10_reds_light_3bands.png",
+      "stimulus": "stimuli/wildfire/shape10_reds_dark_3bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 10,
       "color": "red",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape11_blues_light_3bands.png",
+      "stimulus": "stimuli/wildfire/shape11_blues_light_6bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 11,
       "color": "blue",
       "lightness": "light",
-      "bands": 3
+      "bands": 6
     },
     {
       "stimulus": "stimuli/wildfire/shape11_reds_dark_6bands.png",
@@ -1416,33 +1756,33 @@ var stimLists = {
       "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape12_reds_light_3bands.png",
+      "stimulus": "stimuli/wildfire/shape12_reds_light_6bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 12,
       "color": "red",
       "lightness": "light",
-      "bands": 3
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape13_blues_light_6bands.png",
+      "stimulus": "stimuli/wildfire/shape13_blues_dark_3bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 13,
       "color": "blue",
-      "lightness": "light",
-      "bands": 6
+      "lightness": "dark",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape13_reds_dark_3bands.png",
+      "stimulus": "stimuli/wildfire/shape13_reds_light_3bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 13,
       "color": "red",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 3
     },
     {
@@ -1456,54 +1796,54 @@ var stimLists = {
       "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape14_reds_light_3bands.png",
+      "stimulus": "stimuli/wildfire/shape14_reds_light_6bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 14,
       "color": "red",
       "lightness": "light",
-      "bands": 3
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape15_blues_dark_3bands.png",
+      "stimulus": "stimuli/wildfire/shape15_blues_light_6bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 15,
       "color": "blue",
-      "lightness": "dark",
-      "bands": 3
+      "lightness": "light",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape15_reds_light_6bands.png",
+      "stimulus": "stimuli/wildfire/shape15_reds_dark_6bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 15,
       "color": "red",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape16_blues_dark_3bands.png",
+      "stimulus": "stimuli/wildfire/shape16_blues_light_3bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 16,
       "color": "blue",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape16_reds_light_6bands.png",
+      "stimulus": "stimuli/wildfire/shape16_reds_dark_3bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 16,
       "color": "red",
-      "lightness": "light",
-      "bands": 6
+      "lightness": "dark",
+      "bands": 3
     },
     {
       "stimulus": "stimuli/wildfire/shape17_blues_light_6bands.png",
@@ -1516,33 +1856,33 @@ var stimLists = {
       "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape17_reds_dark_3bands.png",
+      "stimulus": "stimuli/wildfire/shape17_reds_dark_6bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 17,
       "color": "red",
       "lightness": "dark",
-      "bands": 3
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape18_blues_light_3bands.png",
+      "stimulus": "stimuli/wildfire/shape18_blues_dark_6bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 18,
       "color": "blue",
-      "lightness": "light",
-      "bands": 3
+      "lightness": "dark",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape18_reds_dark_6bands.png",
+      "stimulus": "stimuli/wildfire/shape18_reds_light_6bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 18,
       "color": "red",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 6
     },
     {
@@ -1556,24 +1896,24 @@ var stimLists = {
       "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape19_reds_dark_3bands.png",
+      "stimulus": "stimuli/wildfire/shape19_reds_dark_6bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 19,
       "color": "red",
       "lightness": "dark",
-      "bands": 3
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape20_blues_dark_3bands.png",
+      "stimulus": "stimuli/wildfire/shape20_blues_dark_6bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 20,
       "color": "blue",
       "lightness": "dark",
-      "bands": 3
+      "bands": 6
     },
     {
       "stimulus": "stimuli/wildfire/shape20_reds_light_6bands.png",
@@ -1586,74 +1926,74 @@ var stimLists = {
       "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape21_blues_light_6bands.png",
+      "stimulus": "stimuli/wildfire/shape21_blues_dark_3bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 21,
       "color": "blue",
-      "lightness": "light",
-      "bands": 6
+      "lightness": "dark",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape21_reds_dark_3bands.png",
+      "stimulus": "stimuli/wildfire/shape21_reds_light_3bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 21,
       "color": "red",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape22_blues_dark_6bands.png",
+      "stimulus": "stimuli/wildfire/shape22_blues_light_3bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 22,
       "color": "blue",
-      "lightness": "dark",
-      "bands": 6
+      "lightness": "light",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape22_reds_light_3bands.png",
+      "stimulus": "stimuli/wildfire/shape22_reds_dark_3bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 22,
       "color": "red",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape23_blues_dark_6bands.png",
+      "stimulus": "stimuli/wildfire/shape23_blues_light_6bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 23,
       "color": "blue",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape23_reds_light_3bands.png",
+      "stimulus": "stimuli/wildfire/shape23_reds_dark_6bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 23,
       "color": "red",
-      "lightness": "light",
-      "bands": 3
+      "lightness": "dark",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape24_blues_dark_3bands.png",
+      "stimulus": "stimuli/wildfire/shape24_blues_dark_6bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 24,
       "color": "blue",
       "lightness": "dark",
-      "bands": 3
+      "bands": 6
     },
     {
       "stimulus": "stimuli/wildfire/shape24_reds_light_6bands.png",
@@ -1666,54 +2006,54 @@ var stimLists = {
       "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape25_blues_light_6bands.png",
+      "stimulus": "stimuli/wildfire/shape25_blues_dark_3bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 25,
       "color": "blue",
-      "lightness": "light",
-      "bands": 6
+      "lightness": "dark",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape25_reds_dark_3bands.png",
+      "stimulus": "stimuli/wildfire/shape25_reds_light_3bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 25,
       "color": "red",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape26_blues_light_6bands.png",
+      "stimulus": "stimuli/wildfire/shape26_blues_dark_6bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 26,
       "color": "blue",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape26_reds_dark_3bands.png",
+      "stimulus": "stimuli/wildfire/shape26_reds_light_6bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 26,
       "color": "red",
-      "lightness": "dark",
-      "bands": 3
+      "lightness": "light",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape27_blues_light_3bands.png",
+      "stimulus": "stimuli/wildfire/shape27_blues_light_6bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "shape",
       "shape": 27,
       "color": "blue",
       "lightness": "light",
-      "bands": 3
+      "bands": 6
     },
     {
       "stimulus": "stimuli/wildfire/shape27_reds_dark_6bands.png",
@@ -1726,86 +2066,256 @@ var stimLists = {
       "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/check28_blues_light_3bands.png",
+      "stimulus": "stimuli/wildfire/shape28_blues_light_3bands.png",
       "hazard": "wildfire",
       "list": "A",
-      "trial_type": "check",
+      "trial_type": "shape",
       "shape": 28,
       "color": "blue",
       "lightness": "light",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/check29_reds_dark_3bands.png",
+      "stimulus": "stimuli/wildfire/shape28_reds_dark_3bands.png",
       "hazard": "wildfire",
       "list": "A",
-      "trial_type": "check",
-      "shape": 29,
+      "trial_type": "shape",
+      "shape": 28,
       "color": "red",
       "lightness": "dark",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/check30_blues_dark_6bands.png",
+      "stimulus": "stimuli/wildfire/shape29_blues_light_6bands.png",
       "hazard": "wildfire",
       "list": "A",
-      "trial_type": "check",
+      "trial_type": "shape",
+      "shape": 29,
+      "color": "blue",
+      "lightness": "light",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape29_reds_dark_6bands.png",
+      "hazard": "wildfire",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 29,
+      "color": "red",
+      "lightness": "dark",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape30_blues_dark_6bands.png",
+      "hazard": "wildfire",
+      "list": "A",
+      "trial_type": "shape",
       "shape": 30,
       "color": "blue",
       "lightness": "dark",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/check31_reds_light_6bands.png",
+      "stimulus": "stimuli/wildfire/shape30_reds_light_6bands.png",
       "hazard": "wildfire",
       "list": "A",
-      "trial_type": "check",
-      "shape": 31,
+      "trial_type": "shape",
+      "shape": 30,
       "color": "red",
       "lightness": "light",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/check32_blues_light_6bands.png",
+      "stimulus": "stimuli/wildfire/shape31_blues_dark_3bands.png",
+      "hazard": "wildfire",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 31,
+      "color": "blue",
+      "lightness": "dark",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape31_reds_light_3bands.png",
+      "hazard": "wildfire",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 31,
+      "color": "red",
+      "lightness": "light",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape32_blues_light_3bands.png",
+      "hazard": "wildfire",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 32,
+      "color": "blue",
+      "lightness": "light",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape32_reds_dark_3bands.png",
+      "hazard": "wildfire",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 32,
+      "color": "red",
+      "lightness": "dark",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape33_blues_dark_3bands.png",
+      "hazard": "wildfire",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 33,
+      "color": "blue",
+      "lightness": "dark",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape33_reds_light_3bands.png",
+      "hazard": "wildfire",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 33,
+      "color": "red",
+      "lightness": "light",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape34_blues_light_3bands.png",
+      "hazard": "wildfire",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 34,
+      "color": "blue",
+      "lightness": "light",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape34_reds_dark_3bands.png",
+      "hazard": "wildfire",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 34,
+      "color": "red",
+      "lightness": "dark",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape35_blues_dark_3bands.png",
+      "hazard": "wildfire",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 35,
+      "color": "blue",
+      "lightness": "dark",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape35_reds_light_3bands.png",
+      "hazard": "wildfire",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 35,
+      "color": "red",
+      "lightness": "light",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape36_blues_dark_6bands.png",
+      "hazard": "wildfire",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 36,
+      "color": "blue",
+      "lightness": "dark",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape36_reds_light_6bands.png",
+      "hazard": "wildfire",
+      "list": "A",
+      "trial_type": "shape",
+      "shape": 36,
+      "color": "red",
+      "lightness": "light",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/wildfire/check37_blues_light_6bands.png",
       "hazard": "wildfire",
       "list": "A",
       "trial_type": "check",
-      "shape": 32,
+      "shape": 37,
       "color": "blue",
+      "lightness": "light",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/wildfire/check38_reds_dark_3bands.png",
+      "hazard": "wildfire",
+      "list": "A",
+      "trial_type": "check",
+      "shape": 38,
+      "color": "red",
+      "lightness": "dark",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/wildfire/check39_blues_dark_3bands.png",
+      "hazard": "wildfire",
+      "list": "A",
+      "trial_type": "check",
+      "shape": 39,
+      "color": "blue",
+      "lightness": "dark",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/wildfire/check40_reds_light_6bands.png",
+      "hazard": "wildfire",
+      "list": "A",
+      "trial_type": "check",
+      "shape": 40,
+      "color": "red",
       "lightness": "light",
       "bands": 6
     }
   ],
   "wildfire_B": [
     {
-      "stimulus": "stimuli/wildfire/shape01_blues_dark_6bands.png",
+      "stimulus": "stimuli/wildfire/shape01_blues_light_6bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 1,
       "color": "blue",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape01_reds_light_3bands.png",
+      "stimulus": "stimuli/wildfire/shape01_reds_dark_6bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 1,
       "color": "red",
-      "lightness": "light",
-      "bands": 3
+      "lightness": "dark",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape02_blues_dark_3bands.png",
+      "stimulus": "stimuli/wildfire/shape02_blues_dark_6bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 2,
       "color": "blue",
       "lightness": "dark",
-      "bands": 3
+      "bands": 6
     },
     {
       "stimulus": "stimuli/wildfire/shape02_reds_light_6bands.png",
@@ -1828,53 +2338,53 @@ var stimLists = {
       "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape03_reds_dark_3bands.png",
+      "stimulus": "stimuli/wildfire/shape03_reds_dark_6bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 3,
       "color": "red",
       "lightness": "dark",
-      "bands": 3
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape04_blues_light_3bands.png",
+      "stimulus": "stimuli/wildfire/shape04_blues_dark_6bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 4,
       "color": "blue",
-      "lightness": "light",
-      "bands": 3
+      "lightness": "dark",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape04_reds_dark_6bands.png",
+      "stimulus": "stimuli/wildfire/shape04_reds_light_6bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 4,
       "color": "red",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape05_blues_light_6bands.png",
+      "stimulus": "stimuli/wildfire/shape05_blues_dark_3bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 5,
       "color": "blue",
-      "lightness": "light",
-      "bands": 6
+      "lightness": "dark",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape05_reds_dark_3bands.png",
+      "stimulus": "stimuli/wildfire/shape05_reds_light_3bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 5,
       "color": "red",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 3
     },
     {
@@ -1888,24 +2398,24 @@ var stimLists = {
       "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape06_reds_light_3bands.png",
+      "stimulus": "stimuli/wildfire/shape06_reds_light_6bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 6,
       "color": "red",
       "lightness": "light",
-      "bands": 3
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape07_blues_dark_6bands.png",
+      "stimulus": "stimuli/wildfire/shape07_blues_dark_3bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 7,
       "color": "blue",
       "lightness": "dark",
-      "bands": 6
+      "bands": 3
     },
     {
       "stimulus": "stimuli/wildfire/shape07_reds_light_3bands.png",
@@ -1918,23 +2428,23 @@ var stimLists = {
       "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape08_blues_dark_6bands.png",
+      "stimulus": "stimuli/wildfire/shape08_blues_light_3bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 8,
       "color": "blue",
-      "lightness": "dark",
-      "bands": 6
+      "lightness": "light",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape08_reds_light_3bands.png",
+      "stimulus": "stimuli/wildfire/shape08_reds_dark_3bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 8,
       "color": "red",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 3
     },
     {
@@ -1948,44 +2458,44 @@ var stimLists = {
       "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape09_reds_dark_3bands.png",
+      "stimulus": "stimuli/wildfire/shape09_reds_dark_6bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 9,
       "color": "red",
       "lightness": "dark",
-      "bands": 3
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape10_blues_light_3bands.png",
+      "stimulus": "stimuli/wildfire/shape10_blues_dark_6bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 10,
       "color": "blue",
-      "lightness": "light",
-      "bands": 3
+      "lightness": "dark",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape10_reds_dark_6bands.png",
+      "stimulus": "stimuli/wildfire/shape10_reds_light_6bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 10,
       "color": "red",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape11_blues_dark_6bands.png",
+      "stimulus": "stimuli/wildfire/shape11_blues_dark_3bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 11,
       "color": "blue",
       "lightness": "dark",
-      "bands": 6
+      "bands": 3
     },
     {
       "stimulus": "stimuli/wildfire/shape11_reds_light_3bands.png",
@@ -2008,33 +2518,33 @@ var stimLists = {
       "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape12_reds_dark_6bands.png",
+      "stimulus": "stimuli/wildfire/shape12_reds_dark_3bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 12,
       "color": "red",
       "lightness": "dark",
-      "bands": 6
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape13_blues_dark_3bands.png",
+      "stimulus": "stimuli/wildfire/shape13_blues_light_6bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 13,
       "color": "blue",
-      "lightness": "dark",
-      "bands": 3
+      "lightness": "light",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape13_reds_light_6bands.png",
+      "stimulus": "stimuli/wildfire/shape13_reds_dark_6bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 13,
       "color": "red",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 6
     },
     {
@@ -2048,54 +2558,54 @@ var stimLists = {
       "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape14_reds_dark_6bands.png",
+      "stimulus": "stimuli/wildfire/shape14_reds_dark_3bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 14,
       "color": "red",
       "lightness": "dark",
-      "bands": 6
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape15_blues_light_6bands.png",
+      "stimulus": "stimuli/wildfire/shape15_blues_dark_3bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 15,
       "color": "blue",
-      "lightness": "light",
-      "bands": 6
+      "lightness": "dark",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape15_reds_dark_3bands.png",
+      "stimulus": "stimuli/wildfire/shape15_reds_light_3bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 15,
       "color": "red",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape16_blues_light_6bands.png",
+      "stimulus": "stimuli/wildfire/shape16_blues_dark_6bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 16,
       "color": "blue",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape16_reds_dark_3bands.png",
+      "stimulus": "stimuli/wildfire/shape16_reds_light_6bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 16,
       "color": "red",
-      "lightness": "dark",
-      "bands": 3
+      "lightness": "light",
+      "bands": 6
     },
     {
       "stimulus": "stimuli/wildfire/shape17_blues_dark_3bands.png",
@@ -2108,33 +2618,33 @@ var stimLists = {
       "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape17_reds_light_6bands.png",
+      "stimulus": "stimuli/wildfire/shape17_reds_light_3bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 17,
       "color": "red",
       "lightness": "light",
-      "bands": 6
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape18_blues_dark_6bands.png",
+      "stimulus": "stimuli/wildfire/shape18_blues_light_3bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 18,
       "color": "blue",
-      "lightness": "dark",
-      "bands": 6
+      "lightness": "light",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape18_reds_light_3bands.png",
+      "stimulus": "stimuli/wildfire/shape18_reds_dark_3bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 18,
       "color": "red",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 3
     },
     {
@@ -2148,24 +2658,24 @@ var stimLists = {
       "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape19_reds_light_6bands.png",
+      "stimulus": "stimuli/wildfire/shape19_reds_light_3bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 19,
       "color": "red",
       "lightness": "light",
-      "bands": 6
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape20_blues_light_6bands.png",
+      "stimulus": "stimuli/wildfire/shape20_blues_light_3bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 20,
       "color": "blue",
       "lightness": "light",
-      "bands": 6
+      "bands": 3
     },
     {
       "stimulus": "stimuli/wildfire/shape20_reds_dark_3bands.png",
@@ -2178,74 +2688,74 @@ var stimLists = {
       "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape21_blues_dark_3bands.png",
+      "stimulus": "stimuli/wildfire/shape21_blues_light_6bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 21,
       "color": "blue",
-      "lightness": "dark",
-      "bands": 3
+      "lightness": "light",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape21_reds_light_6bands.png",
+      "stimulus": "stimuli/wildfire/shape21_reds_dark_6bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 21,
       "color": "red",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape22_blues_light_3bands.png",
+      "stimulus": "stimuli/wildfire/shape22_blues_dark_6bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 22,
       "color": "blue",
-      "lightness": "light",
-      "bands": 3
+      "lightness": "dark",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape22_reds_dark_6bands.png",
+      "stimulus": "stimuli/wildfire/shape22_reds_light_6bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 22,
       "color": "red",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape23_blues_light_3bands.png",
+      "stimulus": "stimuli/wildfire/shape23_blues_dark_3bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 23,
       "color": "blue",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape23_reds_dark_6bands.png",
+      "stimulus": "stimuli/wildfire/shape23_reds_light_3bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 23,
       "color": "red",
-      "lightness": "dark",
-      "bands": 6
+      "lightness": "light",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape24_blues_light_6bands.png",
+      "stimulus": "stimuli/wildfire/shape24_blues_light_3bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 24,
       "color": "blue",
       "lightness": "light",
-      "bands": 6
+      "bands": 3
     },
     {
       "stimulus": "stimuli/wildfire/shape24_reds_dark_3bands.png",
@@ -2258,54 +2768,54 @@ var stimLists = {
       "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape25_blues_dark_3bands.png",
+      "stimulus": "stimuli/wildfire/shape25_blues_light_6bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 25,
       "color": "blue",
-      "lightness": "dark",
-      "bands": 3
+      "lightness": "light",
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape25_reds_light_6bands.png",
+      "stimulus": "stimuli/wildfire/shape25_reds_dark_6bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 25,
       "color": "red",
-      "lightness": "light",
+      "lightness": "dark",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/shape26_blues_dark_3bands.png",
+      "stimulus": "stimuli/wildfire/shape26_blues_light_3bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 26,
       "color": "blue",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape26_reds_light_6bands.png",
+      "stimulus": "stimuli/wildfire/shape26_reds_dark_3bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 26,
       "color": "red",
-      "lightness": "light",
-      "bands": 6
+      "lightness": "dark",
+      "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/shape27_blues_dark_6bands.png",
+      "stimulus": "stimuli/wildfire/shape27_blues_dark_3bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "shape",
       "shape": 27,
       "color": "blue",
       "lightness": "dark",
-      "bands": 6
+      "bands": 3
     },
     {
       "stimulus": "stimuli/wildfire/shape27_reds_light_3bands.png",
@@ -2318,53 +2828,223 @@ var stimLists = {
       "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/check28_reds_dark_6bands.png",
+      "stimulus": "stimuli/wildfire/shape28_blues_dark_6bands.png",
       "hazard": "wildfire",
       "list": "B",
-      "trial_type": "check",
+      "trial_type": "shape",
+      "shape": 28,
+      "color": "blue",
+      "lightness": "dark",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape28_reds_light_6bands.png",
+      "hazard": "wildfire",
+      "list": "B",
+      "trial_type": "shape",
       "shape": 28,
       "color": "red",
-      "lightness": "dark",
+      "lightness": "light",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/check29_blues_light_6bands.png",
+      "stimulus": "stimuli/wildfire/shape29_blues_dark_3bands.png",
       "hazard": "wildfire",
       "list": "B",
-      "trial_type": "check",
+      "trial_type": "shape",
       "shape": 29,
       "color": "blue",
+      "lightness": "dark",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape29_reds_light_3bands.png",
+      "hazard": "wildfire",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 29,
+      "color": "red",
+      "lightness": "light",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape30_blues_light_3bands.png",
+      "hazard": "wildfire",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 30,
+      "color": "blue",
+      "lightness": "light",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape30_reds_dark_3bands.png",
+      "hazard": "wildfire",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 30,
+      "color": "red",
+      "lightness": "dark",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape31_blues_light_6bands.png",
+      "hazard": "wildfire",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 31,
+      "color": "blue",
       "lightness": "light",
       "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/check30_reds_light_3bands.png",
+      "stimulus": "stimuli/wildfire/shape31_reds_dark_6bands.png",
+      "hazard": "wildfire",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 31,
+      "color": "red",
+      "lightness": "dark",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape32_blues_dark_6bands.png",
+      "hazard": "wildfire",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 32,
+      "color": "blue",
+      "lightness": "dark",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape32_reds_light_6bands.png",
+      "hazard": "wildfire",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 32,
+      "color": "red",
+      "lightness": "light",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape33_blues_light_6bands.png",
+      "hazard": "wildfire",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 33,
+      "color": "blue",
+      "lightness": "light",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape33_reds_dark_6bands.png",
+      "hazard": "wildfire",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 33,
+      "color": "red",
+      "lightness": "dark",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape34_blues_dark_6bands.png",
+      "hazard": "wildfire",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 34,
+      "color": "blue",
+      "lightness": "dark",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape34_reds_light_6bands.png",
+      "hazard": "wildfire",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 34,
+      "color": "red",
+      "lightness": "light",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape35_blues_light_6bands.png",
+      "hazard": "wildfire",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 35,
+      "color": "blue",
+      "lightness": "light",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape35_reds_dark_6bands.png",
+      "hazard": "wildfire",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 35,
+      "color": "red",
+      "lightness": "dark",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape36_blues_light_3bands.png",
+      "hazard": "wildfire",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 36,
+      "color": "blue",
+      "lightness": "light",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/wildfire/shape36_reds_dark_3bands.png",
+      "hazard": "wildfire",
+      "list": "B",
+      "trial_type": "shape",
+      "shape": 36,
+      "color": "red",
+      "lightness": "dark",
+      "bands": 3
+    },
+    {
+      "stimulus": "stimuli/wildfire/check37_reds_light_3bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "check",
-      "shape": 30,
+      "shape": 37,
       "color": "red",
       "lightness": "light",
       "bands": 3
     },
     {
-      "stimulus": "stimuli/wildfire/check31_blues_dark_3bands.png",
+      "stimulus": "stimuli/wildfire/check38_blues_dark_6bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "check",
-      "shape": 31,
+      "shape": 38,
       "color": "blue",
       "lightness": "dark",
-      "bands": 3
+      "bands": 6
     },
     {
-      "stimulus": "stimuli/wildfire/check32_reds_dark_3bands.png",
+      "stimulus": "stimuli/wildfire/check39_reds_dark_6bands.png",
       "hazard": "wildfire",
       "list": "B",
       "trial_type": "check",
-      "shape": 32,
+      "shape": 39,
       "color": "red",
       "lightness": "dark",
+      "bands": 6
+    },
+    {
+      "stimulus": "stimuli/wildfire/check40_blues_light_3bands.png",
+      "hazard": "wildfire",
+      "list": "B",
+      "trial_type": "check",
+      "shape": 40,
+      "color": "blue",
+      "lightness": "light",
       "bands": 3
     }
   ]

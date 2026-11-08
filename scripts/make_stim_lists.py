@@ -1,15 +1,24 @@
 """Split the map stimuli into 4 lists (flood A/B, wildfire A/B).
 
-Design (same structure for flood and wildfire, so list A/B are matched across hazards):
-  * Main shapes (shape01-27): each list gets 2 maps per shape - 1 blue, 1 red.
-    Within a shape, the red map is the "opposite" of the blue map on both
-    lightness and bands (e.g. blue light/3 -> red dark/6), so every shape
-    contributes exactly 1 light, 1 dark, 1 3-band and 1 6-band map. List B gets
-    the swapped assignment (blue takes the red's combo and vice versa), so A and
-    B never share an image.
-    -> 54 maps per list: 27 light / 27 dark, 27 3-band / 27 6-band, 27 blue / 27 red.
-  * Check shapes (check28-32): 1 map per check shape per list (5 check trials).
-    List B gets the full complement (other color, lightness and bands) of list A.
+Stimuli on disk (identical filenames for flood and wildfire):
+  * shape01-36: 4 maps per shape. For each band count (specificity) there is
+    one blue and one red map, and the two have opposite lightness, e.g.
+    shape01 = blue dark/3 + red light/3, and blue light/6 + red dark/6.
+  * check37-41: 2 maps per check shape (one blue, one red). check41 is the
+    practice trial, so only check37-40 go into the lists.
+  * example42/43: instruction examples only - not put in any list.
+
+Design (same for flood and wildfire, so list A/B are matched across hazards):
+  * Main shapes: each list gets one blue/red pair per shape that shares
+    specificity (same bands, opposite lightness); list B gets the other pair,
+    so A and B never share an image. Bands are assigned so each list has
+    18 3-band / 18 6-band shapes, balanced over the two shape layouts
+    (blue dark when 3-band vs blue light when 3-band), which also balances
+    lightness x color x bands.
+    -> 72 maps per list: 36 light / 36 dark, 36 3-band / 36 6-band,
+       36 blue / 36 red, and 18 maps in each lightness x color cell.
+  * Check shapes: 1 map per check shape per list (4 check trials); list B gets
+    the other map of the pair. Colors alternate in list A (blue, red, ...).
 
 Run from the repo root:  python3 scripts/make_stim_lists.py
 Writes stimLists.js (loaded by index.html) and stimLists.csv (for records).
@@ -18,55 +27,83 @@ Writes stimLists.js (loaded by index.html) and stimLists.csv (for records).
 import csv
 import json
 import random
-from collections import Counter
+import re
+from collections import Counter, defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SEED = 20261105
+SEED = 20261106
 HAZARDS = ["flood", "wildfire"]
-COMBOS = [("light", 3), ("light", 6), ("dark", 3), ("dark", 6)]
+SHAPES = range(1, 37)
+CHECKS = range(37, 41)  # check41 = practice trial (index.html), not in the lists
+PAT = re.compile(r"^(shape|check)(\d+)_(blues|reds)_(light|dark)_(3|6)bands\.png$")
 
 
-def opposite(combo):
-    light, bands = combo
-    return ("dark" if light == "light" else "light", 6 if bands == 3 else 3)
+def scan(hazard):
+    """Return {(kind, num): [(color, light, bands), ...]} for files on disk."""
+    found = defaultdict(list)
+    for p in sorted((ROOT / "stimuli" / hazard).glob("*.png")):
+        m = PAT.match(p.name)
+        if m:
+            kind, num, color, light, bands = m.groups()
+            found[(kind, int(num))].append((color, light, int(bands)))
+    return found
 
 
-def fname(kind, num, color, light, bands):
-    return f"{kind}{num:02d}_{color}_{light}_{bands}bands.png"
+files = {h: scan(h) for h in HAZARDS}
+assert files["flood"] == files["wildfire"], "flood and wildfire stimuli differ"
+found = files["flood"]
 
+
+def pair(kind, num, bands):
+    """The (blue, red) maps of a shape at one band count (specificity)."""
+    maps = [m for m in found[(kind, num)] if m[2] == bands]
+    blue = [m for m in maps if m[0] == "blues"]
+    red = [m for m in maps if m[0] == "reds"]
+    assert len(blue) == 1 and len(red) == 1 and blue[0][1] != red[0][1], (kind, num, bands, maps)
+    return [blue[0], red[0]]
+
+
+def layout(num):
+    """Lightness of the blue 3-band map - distinguishes the two shape layouts."""
+    return pair("shape", num, 3)[0][1]
+
+
+for n in SHAPES:
+    assert len(found[("shape", n)]) == 4, (n, found[("shape", n)])
+    pair("shape", n, 6)
+for n in CHECKS:
+    assert len(found[("check", n)]) == 2, (n, found[("check", n)])
 
 rng = random.Random(SEED)
 
-# Blue combo for each main shape in list A: spread evenly over the 4 combos (7/7/7/6), shuffled.
-blue_combo_a = [COMBOS[i % 4] for i in range(27)]
-rng.shuffle(blue_combo_a)
+# List A band count per main shape: half 3-band / half 6-band within each layout.
+bands_a = {}
+for lay in ("light", "dark"):
+    group = [n for n in SHAPES if layout(n) == lay]
+    assert len(group) % 2 == 0
+    bands = [3, 6] * (len(group) // 2)
+    rng.shuffle(bands)
+    bands_a.update(zip(group, bands))
 
-# Check shapes in list A: (color, lightness, bands); list B = full complement.
-checks_a = {
-    28: ("blues", "light", 3),
-    29: ("reds", "dark", 3),
-    30: ("blues", "dark", 6),
-    31: ("reds", "light", 6),
-    32: ("blues", "light", 6),
-}
+# List A check maps: alternate blue / red.
+check_color_a = {n: ("blues" if i % 2 == 0 else "reds") for i, n in enumerate(CHECKS)}
 
 
-def other_color(c):
-    return "reds" if c == "blues" else "blues"
+def other(x, a, b):
+    return b if x == a else a
 
 
 def build_list(which):
     items = []
-    for i, bc in enumerate(blue_combo_a, start=1):
-        blue = bc if which == "A" else opposite(bc)
-        red = opposite(blue)
-        for color, (light, bands) in (("blues", blue), ("reds", red)):
-            items.append(dict(kind="shape", shape=i, color=color, lightness=light, bands=bands))
-    for n, (color, light, bands) in checks_a.items():
-        if which == "B":
-            color, (light, bands) = other_color(color), opposite((light, bands))
-        items.append(dict(kind="check", shape=n, color=color, lightness=light, bands=bands))
+    for n in SHAPES:
+        b = bands_a[n] if which == "A" else other(bands_a[n], 3, 6)
+        for color, lt, bands in pair("shape", n, b):
+            items.append(dict(kind="shape", shape=n, color=color, lightness=lt, bands=bands))
+    for n in CHECKS:
+        color = check_color_a[n] if which == "A" else other(check_color_a[n], "blues", "reds")
+        (m,) = [m for m in found[("check", n)] if m[0] == color]
+        items.append(dict(kind="check", shape=n, color=m[0], lightness=m[1], bands=m[2]))
     return items
 
 
@@ -77,7 +114,7 @@ for hazard in HAZARDS:
         key = f"{hazard}_{which}"
         entries = []
         for it in build_list(which):
-            path = f"stimuli/{hazard}/" + fname(it["kind"], it["shape"], it["color"], it["lightness"], it["bands"])
+            path = f"stimuli/{hazard}/{it['kind']}{it['shape']:02d}_{it['color']}_{it['lightness']}_{it['bands']}bands.png"
             assert (ROOT / path).exists(), path
             entry = dict(stimulus=path, hazard=hazard, list=which, trial_type=it["kind"],
                          shape=it["shape"], color=it["color"].rstrip("s"),
@@ -90,16 +127,21 @@ for hazard in HAZARDS:
 for key, entries in lists.items():
     main = [e for e in entries if e["trial_type"] == "shape"]
     chk = [e for e in entries if e["trial_type"] == "check"]
-    assert len(main) == 54 and len(chk) == 5
+    assert len(main) == 2 * len(SHAPES) and len(chk) == len(CHECKS)
     per_shape = Counter((e["shape"], e["color"]) for e in main)
-    assert all(v == 1 for v in per_shape.values()) and len(per_shape) == 54
-    for field in ("lightness", "bands", "color"):
-        c = Counter(e[field] for e in main)
-        assert len(set(c.values())) == 1, (key, field, c)
-    print(key, "main:", dict(Counter((e["lightness"], e["bands"]) for e in main)),
+    assert all(v == 1 for v in per_shape.values()) and len(per_shape) == 2 * len(SHAPES)
+    for fields in (("lightness",), ("bands",), ("color",), ("lightness", "color", "bands")):
+        c = Counter(tuple(e[f] for f in fields) for e in main)
+        assert len(set(c.values())) == 1, (key, fields, c)
+    print(key, "main:", dict(Counter((e["lightness"], e["color"], e["bands"]) for e in main)),
           "| checks:", [(e["shape"], e["color"], e["lightness"], e["bands"]) for e in chk])
 for h in HAZARDS:
-    assert not {e["stimulus"] for e in lists[f"{h}_A"]} & {e["stimulus"] for e in lists[f"{h}_B"]}
+    a = {e["stimulus"] for e in lists[f"{h}_A"]}
+    b = {e["stimulus"] for e in lists[f"{h}_B"]}
+    assert not a & b
+    on_disk = {f"stimuli/{h}/{p.name}" for p in (ROOT / "stimuli" / h).glob("*.png")
+               if PAT.match(p.name) and not p.name.startswith("check41")}
+    assert a | b == on_disk, on_disk - (a | b)
 
 (ROOT / "stimLists.js").write_text(
     "// Generated by scripts/make_stim_lists.py - do not edit by hand.\n"
