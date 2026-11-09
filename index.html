@@ -233,7 +233,7 @@ function buildTimeline(condition){
                 "You live in the house (shown below). Unfortunately, this region may be affected by a "+folderName+". Local</br>"+
                 "experts are carefully monitoring the "+folderName+" conditions, and have calculated the probability of your</br>"+
                 "region being affected. On each trial in this experiment, you will see hazard maps showing the probability that</br>" +
-                "your house will be in the " +folderName+" zone."+ 
+                "your house will be in the " +folderName+" zone.</br>"+ 
                 "Your task will be to choose whether to evacuate or to stay based on the information shown in the map.</br>"+
                 "<p>After you make your choice, you will be told whether your house was in the " +folderName+" zone or not. Your goal</br>" +
                 "is to make the correct decision: evacuate a house that will be in the " +folderName+" zone, and stay in a house that will not.</p>" +
@@ -251,11 +251,12 @@ function buildTimeline(condition){
                 "Each map will have an <strong>X</strong> that represents the location of your house on the map.</br>" +
                 "The different colors represent the probability of the region being affected by the " +folderName+".</br>"+ 
                 "The legend on the right shows the range of probabilities that each color represents. Each map is</br>"+
-                "unique: the colors, the location of your house, and the probability ranges will vary between maps.</p>"+
-                "Each trial is a fresh start: what happened on previous trials doesn't matter." +
+                "unique: the colors, the location of your house, and the probability ranges will vary between maps.</br>"+
+                "Each trial is independent of the others. Whether your house was in the " +folderName+" zone on a previous</br>" +
+                "trial doesn't affect the result on the next trial.</br>" +
                 //"You may see multiple trials where the probability of your house being in the " + folderName + " zone is</br>"+
                 //"70-100%. Some will result in your house being in the " + folderName + " zone, and some will not. " +
-                "<p><img src='" + exampleStim[0] + "' style='max-width:450px;'></p>"+
+                "<p><img src='" + exampleStim[0] + "' style='max-width:500px;'></p>"+
                 "<p>Click 'Continue' when you are ready to move to the next page.</p>",
         choices: ["Continue"],
         post_trial_gap: 2000
