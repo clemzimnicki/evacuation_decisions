@@ -27,7 +27,7 @@
 //----------------------------------------- settings -----------------------------------------------
 
 const EXPERIMENT_ID = "gRI46LcMijCx";   // DataPipe experiment
-const MAP_WIDTH = 300;                  // px width of the hazard maps
+const MAP_WIDTH = 600;                  // px width of the hazard maps
 const FEEDBACK_MS = 600;                // how long the outcome screen stays up
 
 // Points (see instructions2)
@@ -154,9 +154,9 @@ function buildTimeline(condition){
       stimulus: "<p>Welcome!</p>"+
       "<p>This study will take about 20 minutes. There will be three parts: <br>"+
       "a consent form, an experimental task, and some demographic information. </p>"+
-      "<p> At the bottom of this screen, you will see a button that says 'Begin Experiment'.</p>" +
-      "<p> Please only click that button when you are ready to complete the 20 minute experiment in one sitting.<br>"+
-      "<p> Once you click that button, it will not be possible to restart the experiment.</p>",
+      "<p> At the bottom of this screen, you will see a button that says 'Begin Experiment'.<br>" +
+      "Please only click that button when you are ready to complete the 20 minute experiment in one sitting.<br>"+
+      "Once you click it, it will not be possible to restart the experiment.</p>",
     choices: ["Begin Experiment"],
     post_trial_gap: 2000
     };
@@ -234,7 +234,7 @@ function buildTimeline(condition){
                 "the correct decision: evacuate a house that will be destroyed, and stay in a house that will not.</p>" +
                 "<p>Some trials will have no obvious answer.</p>"+
                 "<p>Below are some examples of the maps you will see.</p>"+
-                "<p><img src='" + exampleStim[0] + "' style='max-width:300px;'><img src='" + exampleStim[1] + "' style='max-width:300px;'></p>"+
+                "<p><img src='" + exampleStim[0] + "' style='max-width:400px;'>     <img src='" + exampleStim[1] + "' style='max-width:400px;'></p>"+
                 "<p>Click 'Continue' when you are ready to move to the next page.</p>",
         choices: ["Continue"],
         post_trial_gap: 2000
@@ -243,13 +243,12 @@ function buildTimeline(condition){
 
    var instructions2 = {
       type: jsPsychHtmlButtonResponse,
-      stimulus: "<p>You will be awarded points based on your performance on the task.</br>" +
-                "Points represent the real costs of decisions: evacuating is expensive and " +
-                "time-consuming, but staying in place is dangerous.</p>"+
+      stimulus: "<p>You will be awarded points based on your performance on the task. Points represent the real</br>" +
+                "costs of decisions: evacuating is expensive and time-consuming, but staying in place is dangerous.</p>" +
                 "<p>You will <strong>earn 5 points</strong> if you make the correct decision:</br>" +
                 "leave a house that " + houseDestruction + ", or stay in a house that stays safe.</p>"+
                 "<p>You will <strong>lose 10 points</strong> if you stay in a house that " + houseDestruction + ".</p>" +
-                "<p>Evacuating costs 2 points.</p>" +
+                "<p>In addition to bonuses based on correct decisions, evacuating costs 2 points, and staying costs no points.</p>" +
                 "<p>You will not earn or lose real extra credit based on your decisions in this experiment.<br>" +
                 "However, please consider each decision carefully. The results of this study will help us understand<br>"+
                 "how to communicate about dangerous situations like natural disasters.</p>"+
@@ -311,8 +310,8 @@ function buildTimeline(condition){
             stimulus: function(){
                 var last = jsPsych.data.get().last(1).values()[0];
                 var msg = t.outcome == 1
-                    ? "<p>Your house was in the " + disaster + " zone.</p><img src='" + text.destroyed + "' style='max-width:300px;'>"
-                    : "<p>Your house was not in the " + disaster + " zone!</p><img src='" + text.safe + "' style='max-width:300px;'>";
+                    ? "<p>Your house was in the " + disaster + " zone.</p><img src='" + text.destroyed + "' style='max-width:400px;'>"
+                    : "<p>Your house was not in the " + disaster + " zone!</p><img src='" + text.safe + "' style='max-width:400px;'>";
                 var sign = last.points_change > 0 ? "+" : "";
                 return msg + "<p>" + sign + last.points_change + " points</p>";
             },
