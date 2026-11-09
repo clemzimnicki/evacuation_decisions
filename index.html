@@ -228,24 +228,44 @@ function buildTimeline(condition){
     /* define testing instructions */
     var instructions1 = {
       type: jsPsychHtmlButtonResponse,
-      stimulus: "<p>During this experiment, you will see hazard maps showing the probability that a "+folderName+" will destroy a region.</br>" +
-                "Each map will have an X that represents the location of your house on the map. Your task will be to choose whether to</br>"+
-                "evacuate or to stay based on the information shown in each map.</p>" +
-                "<p>After you make your choice, you will be told whether your house was destroyed or whether it was not. Your goal is to make</br>" +
-                "the correct decision: evacuate a house that will be destroyed, and stay in a house that will not.</p>" +
+      stimulus: "<p>During this experiment, we ask that you imagine the following scenario:</br>" +
+                "You live in the house (shown below). Unfortunately, this region may be affected by a "+folderName+". Local</br>"+
+                "experts are carefully monitoring the "+folderName+" conditions, and have calculated the probability of your</br>"+
+                "region being affected. On each trial in this experiment, you will see hazard maps showing the probability that</br>" +
+                "your house will be in the " +folderName+" zone."+ 
+                "Your task will be to choose whether to evacuate or to stay based on the information shown in the map.</br>"+
+                "<p>After you make your choice, you will be told whether your house was in the " +folderName+" zone or not. Your goal</br>" +
+                "is to make the correct decision: evacuate a house that will be in the " +folderName+" zone, and stay in a house that will not.</p>" +
                 "<p>Some trials will have no obvious answer.</p>"+
-                "<p>Below are some examples of the maps you will see.</p>"+
-                "<p><img src='" + exampleStim[0] + "' style='max-width:450px;'>&emsp;&emsp;&emsp;<img src='" + exampleStim[1] + "' style='max-width:450px;'></p>"+
                 "<p>Click 'Continue' when you are ready to move to the next page.</p>",
         choices: ["Continue"],
         post_trial_gap: 2000
     };
    timeline.push(instructions1);
 
+       /* define testing instructions */
+       var instructions2 = {
+      type: jsPsychHtmlButtonResponse,
+      stimulus: "<p>Below is an example of the maps you will see.</br>"+
+                "Each map will have an <strong>X</strong> that represents the location of your house on the map.</br>" +
+                "The different colors represent the probability of the region being affected by the " +folderName+".</br>"+ 
+                "The legend on the right shows the range of probabilities that each color represents. Each map is</br>"+
+                "unique: the colors, the location of your house, and the probability ranges will vary between maps.</p>"+
+                "Each trial is a fresh start: what happened on previous trials doesn't matter." +
+                //"You may see multiple trials where the probability of your house being in the " + folderName + " zone is</br>"+
+                //"70-100%. Some will result in your house being in the " + folderName + " zone, and some will not. " +
+                "<p><img src='" + exampleStim[0] + "' style='max-width:450px;'></p>"+
+                "<p>Click 'Continue' when you are ready to move to the next page.</p>",
+        choices: ["Continue"],
+        post_trial_gap: 2000
+    };
+   timeline.push(instructions2);
+
    var instructions2 = {
       type: jsPsychHtmlButtonResponse,
       stimulus: "<p>You will be awarded points based on your performance on the task. Points represent the real costs</br>" +
                 "of these decisions: evacuating is expensive and time-consuming, but staying in place can be dangerous.</p>" +
+                "<p><strong>You will begin with a 10 cent bonus.</strong></p>"+
                 "<p>You will <strong>earn 5 points</strong> if you make the correct decision:</br>" +
                 "leave a house that " + houseDestruction + ", or stay in a house that stays safe.</p>"+
                 "<p>You will <strong>lose 10 points</strong> if you stay in a house that " + houseDestruction + ".</p>" +
