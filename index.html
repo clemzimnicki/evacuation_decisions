@@ -340,12 +340,10 @@ function buildTimeline(condition){
         var result = {
             type: jsPsychHtmlKeyboardResponse,
             stimulus: function(){
-                var last = jsPsych.data.get().last(1).values()[0];
-                var msg = t.outcome == 1
+                // outcome message + image only (points change is saved in the data, not shown)
+                return t.outcome == 1
                     ? "<p>Your house was in the " + disaster + " zone.</p><img src='" + text.destroyed + "' style='max-width:500px;'>"
                     : "<p>Your house was not in the " + disaster + " zone!</p><img src='" + text.safe + "' style='max-width:500px;'>";
-                //var sign = last.points_change > 0 ? "+" : "";
-                //return msg + "<p>" + sign + last.points_change + " points</p>";
             },
             choices: "NO_KEYS",
             trial_duration: FEEDBACK_MS,
