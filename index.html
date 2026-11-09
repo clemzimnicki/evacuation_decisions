@@ -9,6 +9,7 @@
     <script src="jspsych/plugin-fullscreen.js"></script>
     <script src="jspsych/plugin-survey-multi-select.js"></script>
     <script src="jspsych/plugin-survey-text.js"></script>
+    <script src="jspsych/plugin-survey-html-form.js"></script>
     <script src="jspsych/plugin-preload.js"></script>
     <!-- DataPipe plugin; 0.4.x is the last line that supports jsPsych 7 -->
     <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe@0.4.0"></script>
@@ -515,7 +516,6 @@ var demographics = {
     var id_age = {
       type: jsPsychSurveyText,     // CHANGE THIS (written survey questions)
       questions: [{prompt: "Please enter your age (in years):", rows: 1, columns: 6, name: "age", required: true}, 
-                  {prompt: "How do you currently describe your gender identity? Please specify.", rows: 1, columns: 60, name: "gender"},
                   {prompt: "What country do you live in?", rows : 1, columns: 40, name: "country"},
                   {prompt: "What is your primary language?", rows : 1, columns: 40, name: "main_lang", required: true},
                   {prompt: "Which other language(s) can you speak, if any?", rows : 1, columns: 40, name: "all_lang", required: true}
@@ -523,14 +523,22 @@ var demographics = {
     };
     timeline.push(id_age);
 
-    var monitor_settings = {
-      type: jsPsychSurveyText,     // CHANGE THIS (written survey questions)
-      questions: [{prompt: "Please enter the make and model of your computer:", rows: 1, columns: 30, name: "monitor", required: true}, 
-                  {prompt: "If you have an external monitor that is different from the make/model of your computer, please enter the monitor model here. Otherwise, enter N/A.", rows: 1, columns: 30, name: "monitor2"},
-                  {prompt: "Please enter the color profile of your computer. On Mac, this can be found under Settings > Displays.", rows : 1, columns: 30, name: "color_profile"}
-                 ]
+    // gender: Male / Female / Other (please specify). Typing in the box selects "Other".
+    var gender = {
+      type: jsPsychSurveyHtmlForm,
+      preamble: "<p>How do you currently describe your gender identity?</p>",
+      html: "<div style='text-align:left; display:inline-block;'>" +
+            "<p><label><input type='radio' name='gender' value='male'> Male</label></p>" +
+            "<p><label><input type='radio' name='gender' value='female'> Female</label></p>" +
+            "<p><label><input type='radio' name='gender' value='other' id='gender-other'> Other (please specify):</label> " +
+            "<input type='text' name='gender_other' size='30' " +
+            "oninput=\"document.getElementById('gender-other').checked = true;\"></p>" +
+            "</div>",
+      button_label: "Continue",
+      data: {task: "gender"}
     };
-    timeline.push(monitor_settings);
+    timeline.push(gender);
+
 
    var goodbye = {
       type: jsPsychHtmlButtonResponse,
@@ -538,15 +546,15 @@ var demographics = {
         // the secret code changes for different experiments on Prolific
         output = "<p>You have finished the experiment!<br> "
         + "This study aims to test how the map design affects people's decisions, specifically in high-risk scenarios.<br>"
-        + "During the study, you were shown either flood hazard maps or wildfire hazard maps.<br>"
-        + "People's associations between colors and concepts affect how they interpret the meanings of colors in maps:<br>"
-        + "for example, people expect that red should mean fire. A recent study showed that people are also more likely to"
-        + "choose to evacuate when wildfire hazard maps are shown in dark red compared to light blue."
-        + "The current study replicates previous methods, comparing evacuation rates for wildfire hazard maps and flood hazard<br>"
+        + "During the study, you were shown either flood hazard maps or wildfire hazard maps.</p>"
+        + "<p>People's associations between colors and concepts affect how they interpret the meanings of colors in maps:<br>"
+        + "for example, people expect that red should mean fire. A recent study showed that people are also more likely to<br>"
+        + "choose to evacuate when wildfire hazard maps are shown in dark red compared to light blue.</p>"
+        + "<p>The current study replicates previous methods, comparing evacuation rates for wildfire hazard maps and flood hazard<br>"
         + "maps. We expect that people will evacuate the highest rates when wildfire hazard maps are shown in red and when<br>"
-        + "flood hazard maps are shown in blue. Studying people's expectations about what colors mean in these maps can"
-        + "help us understand how to design them so that they are easy to interpret."
-        + "You may now exit this page. Thank you for participating!</p>"
+        + "flood hazard maps are shown in blue. Studying people's expectations about what colors mean in these maps can<br>"
+        + "help us understand how to design them so that they are easy to interpret.</p>"
+        + "<p>You may now exit this page. Thank you for participating!</p>"
       return output;
       },
       choices: ["Complete Experiment"]    
