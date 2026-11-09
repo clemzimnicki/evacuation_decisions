@@ -20,7 +20,7 @@
         body { background-color: rgb(255,255,255); }
         .map { display: block; margin: 10px auto; }
         /* Stay / Evacuate buttons on the decision trials */
-        .decision-btn { font-size: 20px; padding: 14px 40px; min-width: 180px; }
+        .decision-btn { font-size: 20px; padding: 10px 30px; min-width: 150px; }
     </style>
   </head>
   <body></body>
@@ -252,9 +252,9 @@ function buildTimeline(condition){
       stimulus: "<p>Below is an example of the maps you will see.</br>"+
                 "Each map will have an <strong>X</strong> that represents the location of your house on the map.</br>" +
                 "The different colors represent the probability of the region being affected by the " +folderName+".</br>"+ 
-                "The legend on the right shows the range of probabilities that each color represents. Each map is</br>"+
-                "unique: the colors, the location of your house, and the probability ranges will vary between maps.</br>"+
-                "Each trial is independent of the others. Whether your house was in the " +folderName+" zone on a previous</br>" +
+                "The legend on the right shows the range of probabilities that each color represents.</p>"+
+                "<p>Each map is unique: the colors, the location of your house, and the probability ranges will vary between maps.</p>"+
+                "<p>Each trial is independent of the others. Whether your house was in the " +folderName+" zone on a previous</br>" +
                 "trial doesn't affect the result on the next trial.</br>" +
                 //"You may see multiple trials where the probability of your house being in the " + folderName + " zone is</br>"+
                 //"70-100%. Some will result in your house being in the " + folderName + " zone, and some will not. " +
