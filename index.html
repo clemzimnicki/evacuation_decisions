@@ -34,6 +34,7 @@ const FEEDBACK_MS = 1500;                // how long the outcome screen stays up
 const POINTS_CORRECT = 5;    // evacuate a house that is hit, or stay in a house that is safe
 const POINTS_STAY_HIT = -10; // stay in a house that is hit
 const COST_EVACUATE = 2;     // subtracted every time the participant evacuates
+const STARTING_POINTS = 10;  // points everyone starts the main task with
 
 // condition number from DataPipe -> list in trialLists.js
 const CONDITIONS = [
@@ -97,8 +98,8 @@ function buildTimeline(condition){
     var trials = trialLists[cond.list];
 
     var timeline = [];
-    var points = 0;
-    var possible_points = 0;   // points earned so far if every decision had been correct
+    var points = STARTING_POINTS;
+    var possible_points = STARTING_POINTS;   // points so far if every decision had been correct
 
     function mapImg(path){
         return "<img class='map' src='" + path + "' style='width:" + MAP_WIDTH + "px;'>";
@@ -265,7 +266,7 @@ function buildTimeline(condition){
       type: jsPsychHtmlButtonResponse,
       stimulus: "<p>You will be awarded points based on your performance on the task. Points represent the real costs</br>" +
                 "of these decisions: evacuating is expensive and time-consuming, but staying in place can be dangerous.</p>" +
-                "<p><strong>You will begin with a 10 cent bonus.</strong></p>"+
+                "<p><strong>You will begin with " + STARTING_POINTS + " points.</strong></p>"+
                 "<p>You will <strong>earn 5 points</strong> if you make the correct decision:</br>" +
                 "leave a house that " + houseDestruction + ", or stay in a house that stays safe.</p>"+
                 "<p>You will <strong>lose 10 points</strong> if you stay in a house that " + houseDestruction + ".</p>" +
