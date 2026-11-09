@@ -19,6 +19,8 @@
     <style>
         body { background-color: rgb(255,255,255); }
         .map { display: block; margin: 10px auto; }
+        /* Stay / Evacuate buttons on the decision trials */
+        .decision-btn { font-size: 20px; padding: 14px 40px; min-width: 180px; }
     </style>
   </head>
   <body></body>
@@ -296,6 +298,8 @@ function buildTimeline(condition){
             type: jsPsychHtmlButtonResponse,
             stimulus: () => reminder() + mapImg(t.stimulus),
             choices: ["Stay", "Evacuate"],
+            button_html: '<button class="jspsych-btn decision-btn">%choice%</button>',
+            margin_horizontal: "60px",   // space on each side of each button (120px between them)
             post_trial_gap: 500,
             data: {
                 task: "decision",
