@@ -98,6 +98,7 @@ function buildTimeline(condition){
 
     var timeline = [];
     var points = 0;
+    var possible_points = 0;   // points earned so far if every decision had been correct
 
     function mapImg(path){
         return "<img class='map' src='" + path + "' style='width:" + MAP_WIDTH + "px;'>";
@@ -300,8 +301,13 @@ function buildTimeline(condition){
                 if (evacuated) { change = (hit ? POINTS_CORRECT : 0) - COST_EVACUATE; } // +3 or -2
                 else           { change = hit ? POINTS_STAY_HIT : POINTS_CORRECT; }     // -10 or +5
                 data.points_change = change;
-                if (countPoints) { points += change; }
+                if (countPoints) {
+                    points += change;
+                    // best possible on this trial: evacuate if hit (+3), stay if safe (+5)
+                    possible_points += hit ? POINTS_CORRECT - COST_EVACUATE : POINTS_CORRECT;
+                }
                 data.points_total = points;
+                data.possible_points_total = possible_points;
             }
         };
 
@@ -345,7 +351,7 @@ function buildTimeline(condition){
     var progress = {
         type: jsPsychHtmlButtonResponse,
         stimulus: () => "<p>Great job! You have completed 50% of the trials.<br>" +
-                    "You have " + points + " points so far.</p>" +
+                    "You have earned " + points + " out of " + possible_points + " possible points so far.</p>" +
                     "<p>Feel free to take a brief break.</p>" +
                     "<p>Press 'Continue' when you are ready to move on.</p>",
         choices: ["Continue"],
@@ -355,6 +361,16 @@ function buildTimeline(condition){
     timeline.push(progress);
 
     block2.forEach(t => timeline.push(...decisionTrials(t, "main", true)));
+
+    timeline.push({
+        type: jsPsychHtmlButtonResponse,
+        stimulus: () => "<p>Great job! You have completed all of the trials.<br>" +
+                    "You earned " + points + " out of " + possible_points + " possible points.</p>" +
+                    "<p>Press 'Continue' to move on.</p>",
+        choices: ["Continue"],
+        post_trial_gap: 1000,
+        data: {task: "final_score"}
+    });
 
     var comprehension = {
         type: jsPsychHtmlButtonResponse,
