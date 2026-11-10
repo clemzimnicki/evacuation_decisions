@@ -41,10 +41,8 @@ const STARTING_POINTS = 10;  // points everyone starts the main task with
 
 // condition number from DataPipe -> list in trialLists.js
 const CONDITIONS = [
-    {name: "floodA",    list: "flood_A",    hazard: "flood"},
-    {name: "floodB",    list: "flood_B",    hazard: "flood"},
-    {name: "wildfireA", list: "wildfire_A", hazard: "wildfire"},
-    {name: "wildfireB", list: "wildfire_B", hazard: "wildfire"}
+    {name: "flood",    list: "flood",    hazard: "flood"},
+    {name: "wildfire", list: "wildfire", hazard: "wildfire"}
 ];
 
 const HAZARD_TEXT = {
@@ -70,7 +68,7 @@ const subject_id = jsPsych.randomization.randomID(10);
 //----------------------------------------- condition assignment -----------------------------------
 
 async function createExperiment(){
-    // For testing, add ?condition=0 (to 3) to the URL to skip DataPipe condition assignment.
+    // For testing, add ?condition=0 (flood) or 1 (wildfire) to the URL to skip DataPipe condition assignment.
     var urlCondition = jsPsych.data.getURLVariable("condition");
     var condition;
     if (urlCondition !== undefined) {
@@ -240,7 +238,6 @@ function buildTimeline(condition){
                 "<p>Your task will be to choose whether to evacuate or to stay based on the information shown in the map.</p>"+
                 "<p>After you make your choice, you will be told whether your house was in the " +folderName+" zone or not. Your goal</br>" +
                 "is to make the correct decision: evacuate a house that will be in the " +folderName+" zone, and stay in a house that will not.</p>" +
-                //"<p>Some trials will have no obvious answer.</p>"+
                 "<p>Click 'Continue' when you are ready to move to the next page.</p>",
         choices: ["Continue"],
         post_trial_gap: 2000
@@ -308,6 +305,7 @@ function buildTimeline(condition){
                 stimulus_file: t.stimulus,
                 hazard: t.hazard,
                 stim_list: t.list,
+                stim_set: t.stim_set,            // which half (A/B) of the stimuli the map came from
                 trial_type_stim: t.trial_type,   // "shape", "check" or "practice"
                 shape: t.shape,
                 color: t.color,
