@@ -527,18 +527,26 @@ var demographics = {
     var gender = {
       type: jsPsychSurveyHtmlForm,
       preamble: "<p>How do you currently describe your gender identity?</p>",
-      html: "<div style='text-align:left; display:inline-block;'>" +
+      html: "<div style='margin-bottom:20px;'><div style='text-align:left; display:inline-block;'>" +
             "<p><label><input type='radio' name='gender' value='male'> Male</label></p>" +
             "<p><label><input type='radio' name='gender' value='female'> Female</label></p>" +
-            "<p><label><input type='radio' name='gender' value='other' id='gender-other'> Other (please specify):</label> " +
+            "<p><label><input type='radio' name='gender' value='other' id='gender-other'> Other (please specify):</label>" +
             "<input type='text' name='gender_other' size='30' " +
             "oninput=\"document.getElementById('gender-other').checked = true;\"></p>" +
-            "</div>",
+            "</div></div>",
       button_label: "Continue",
       data: {task: "gender"}
     };
     timeline.push(gender);
 
+    var wildfire_demographics = {
+      type: jsPsychMultiSelect,     // CHANGE THIS (written survey questions)
+      questions: [{prompt: "Have you ever evacuated your house due to a "+folderName+"?", options: ["Yes", "No", "Prefer not to answer"], name: "houseEvac", required: true}, 
+                  {prompt: "Have you ever evacuated any building due to a "+folderName+"?", options: ["Yes", "No", "Prefer not to answer"], name: "buildingEvac", required: true},
+                  {prompt: "Have you ever lived in a region prone to natural disasters?", options: ["Yes", "No", "Prefer not to answer"], name: "disasterRegion", required: true}
+                 ]
+    };
+    timeline.push(wildfire_demographics);
 
    var goodbye = {
       type: jsPsychHtmlButtonResponse,
