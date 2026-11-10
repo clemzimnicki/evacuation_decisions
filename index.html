@@ -540,7 +540,7 @@ var demographics = {
     timeline.push(gender);
 
     var wildfire_demographics = {
-      type: jsPsychMultiSelect,     // CHANGE THIS (written survey questions)
+      type: jsPsychSurveyMultiSelect,     // CHANGE THIS (written survey questions)
       questions: [{prompt: "Have you ever evacuated your house due to a "+folderName+"?", options: ["Yes", "No", "Prefer not to answer"], name: "houseEvac", required: true}, 
                   {prompt: "Have you ever evacuated any building due to a "+folderName+"?", options: ["Yes", "No", "Prefer not to answer"], name: "buildingEvac", required: true},
                   {prompt: "Have you ever lived in a region prone to natural disasters?", options: ["Yes", "No", "Prefer not to answer"], name: "disasterRegion", required: true}
