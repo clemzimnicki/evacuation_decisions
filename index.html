@@ -85,58 +85,6 @@ async function createExperiment(){
     jsPsych.run(buildTimeline(condition));
 }
 
-<<<<<<< HEAD
-//----------------------------------------- repeat-participant check -------------------------------
-// DataPipe can't look up existing IDs, but it refuses to save a second file with the same name
-// (it tracks filenames itself, so this works with Google Drive even though Drive allows duplicates).
-// So before anything else we save a small registration file named after the participant's ID.
-// If that file already exists, this ID has started the study before and we stop here.
-
-const CONTACT_EMAIL = "zimnicki@wisc.edu";
-
-// ids for the data file (Prolific passes PROLIFIC_PID; SONA-style links pass id)
-const urlVars = jsPsych.data.urlVariables();
-const external_id = urlVars.PROLIFIC_PID || urlVars.id;   // undefined if not launched from Prolific/SONA
-const participant_id = external_id || subject_id;
-
-function showRepeatMessage(){
-    document.body.innerHTML = '<p>Our records indicate that you have already started this experiment. Due to the nature of the experiment, restarting is not permitted.</p><p>If you believe this message is in error, you can contact the researchers at ' + CONTACT_EMAIL + '.</p><p>Our apologies for the trouble.</p>';
-}
-
-function showErrorMessage(){
-    document.body.innerHTML = '<p>Our apologies. There was a technical error on our end while loading the experiment.</p><p>You will not be able to complete the experiment. You can contact the researchers at ' + CONTACT_EMAIL + ' with any questions.</p><p>Our apologies for the trouble.</p>';
-}
-
-// Resolves to "new", "repeat", or "error".
-async function registration(){
-    // No Prolific/SONA ID (e.g. local testing): nothing to check against, so move on.
-    if (!external_id) return "new";
-
-    // DataPipe validation requires a trial_type column in every file.
-    var csv = "trial_type,participant_id,registered_at\n" +
-              "registration," + participant_id + "," + new Date().toISOString();
-
-    var result = await jsPsychPipe.saveData(
-        EXPERIMENT_ID,
-        "registration_" + participant_id + ".csv",
-        csv
-    );
-
-    if (result instanceof Error) {            // network failure
-        console.error("Registration failed:", result);
-        return "error";
-    }
-    if (result && result.error) {
-        // DataPipe reports a duplicate filename as FILE_EXISTS (OSF_FILE_EXISTS before Sept 2026)
-        if (String(result.error).includes("EXISTS")) return "repeat";
-        console.error("Registration failed:", result);
-        return "error";
-    }
-    return "new";
-}
-
-=======
->>>>>>> parent of 43a0637 (Updated trialLists outcomes)
 //----------------------------------------- timeline -----------------------------------------------
 
 function buildTimeline(condition){
