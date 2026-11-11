@@ -374,7 +374,7 @@ function buildTimeline(condition){
     var progress = {
         type: jsPsychHtmlButtonResponse,
         stimulus: () => "<p>Great job! You have completed 50% of the trials.<br>" +
-                    "You have earned " + points + " out of " + possible_points + " possible points so far.</p>" +
+                    "You have earned " + points + "so far.</p>" +
                     "<p>Feel free to take a brief break.</p>" +
                     "<p>Press 'Continue' when you are ready to move on.</p>",
         choices: ["Continue"],
@@ -388,7 +388,7 @@ function buildTimeline(condition){
     timeline.push({
         type: jsPsychHtmlButtonResponse,
         stimulus: () => "<p>Great job! You have completed all of the trials.<br>" +
-                    "You earned " + points + " out of " + possible_points + " possible points.</p>" +
+                    "You earned " + points + "points.</p>" +
                     "<p>Press 'Continue' to move on.</p>",
         choices: ["Continue"],
         post_trial_gap: 1000,
