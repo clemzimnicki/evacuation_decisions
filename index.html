@@ -115,10 +115,14 @@ async function registration(){
     // No Prolific/SONA ID (e.g. local testing): nothing to check against, so move on.
     if (!external_id) return "new";
 
+    // DataPipe validation requires a trial_type column in every file.
+    var csv = "trial_type,participant_id,registered_at\n" +
+              "registration," + participant_id + "," + new Date().toISOString();
+
     var result = await jsPsychPipe.saveData(
         EXPERIMENT_ID,
         "registration_" + participant_id + ".csv",
-        "participant_id,registered_at\n" + participant_id + "," + new Date().toISOString() + "\n"
+        csv
     );
 
     if (result instanceof Error) {            // network failure
